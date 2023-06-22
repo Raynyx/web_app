@@ -53,7 +53,7 @@ if pokemon != '':
                 st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  alt="cat gif">',
                             unsafe_allow_html=True)
 
-                st.write()
+                st.write("")
                 tipos = bus.get_tipo(pokemon)
                 for tipo in tipos:
                     path = f"tipos/{tipo}.png"
