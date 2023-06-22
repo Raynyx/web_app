@@ -60,6 +60,18 @@ if do:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title=select)
         with modal.container():
+            bus.pintar_ruta(select, region)
+            
+            file_ = open("pruebaGIF_pop.gif", "rb")
+            contents2 = file_.read()
+            data_url2 = base64.b64encode(contents2).decode("utf-8")
+            file_.close()
+            r,l,l2,l3 = st.columns(4)
+            with r:
+                st.markdown(
+                        f'<img src="data:image/gif;base64,{data_url2}"  width="300" height="300" alt="cat gif">',
+                        unsafe_allow_html=True)
+                
             st.markdown(f"Nivel mínimo de la ruta: {minlevel[index]}")
             st.markdown(f"Nivel máximo de la ruta: {maxlevel[index]}")
             st.markdown(f"Forma de captura: {method[index]}")
