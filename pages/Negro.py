@@ -84,7 +84,7 @@ if do:
         st.write(formateado)
         with modal.container():
             x,y,z=st.columns(3)
-            with y:
+            with x:
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
