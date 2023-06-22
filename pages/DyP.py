@@ -26,14 +26,16 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
 do = False
 
+region = st.radio("Selecciona el juego:",["pearl","diamond"])
+
 if pokemon != '':
     try :
-        if bus.maps(pokemon, 'pearl') == 'not found':
-            st.error("Este pokemon no se encuentra en esta generación")
+        if bus.maps(pokemon, region) == 'not found':
+            st.error("Este pokemon no tiene encounter en esta generación")
         else:
-            bus.maps(pokemon, 'pearl')
+            bus.maps(pokemon, region)
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'pearl')
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, region)
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
