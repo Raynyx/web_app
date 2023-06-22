@@ -46,9 +46,9 @@ if pokemon != '':
                 st.markdown(
                         f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
                         unsafe_allow_html=True)
-            with l3:
-                st.write("Aquí iria el gif del pokemon")
-                st.write("Aquí iria el tipo del  del pokemon")
+            #with l3:
+                #st.write("Aquí iria el gif del pokemon")
+                #st.write("Aquí iria el tipo del  del pokemon")
     except:
         st.error("Este pokemon no existe")
         
