@@ -1,8 +1,8 @@
+numpy
+opencv-python-headless
 dst_clickable_images
 st_pages
 imageio
 streamlit-extras
 streamlit-modal
-numpy
-opencv-python-headless
 base64
