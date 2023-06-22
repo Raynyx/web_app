@@ -117,6 +117,8 @@ def maps(pokemon, juego):
                 
     iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
 
+
+
 def pinta_ruta(route, juego):
     
     juegos = {"black":"teselia","white":"teselia","white-2":"teselia", "black-2":"teselia","pearl":"sinnoh",
@@ -145,11 +147,11 @@ def pinta_ruta(route, juego):
         numero = re.findall("\d+",route)
         for lugar in lugares:
             patron = r"\b" + re.escape(numero) + r"\b"
-            if lugar in res_lugar and re.search(patron, lugar):
+            if lugar in route and re.search(patron, lugar):
                 formateada = lugar
     except:
         for lugar in lugares:
-            if lugar in res_lugar:
+            if lugar in route:
                 formateado = lugar
     
     image = im0
