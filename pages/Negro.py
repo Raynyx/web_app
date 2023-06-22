@@ -40,11 +40,11 @@ if pokemon != '':
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
             r,l3 = st.columns(2)
-            with r:
+            with b:
                 st.markdown(
                         f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
                         unsafe_allow_html=True)
-            with l3:
+            with h:
                 bus.get_sprite(pokemon)
                 file_ = open("spriteGIF.gif", "rb")
                 contents2 = file_.read()
