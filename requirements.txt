@@ -4,3 +4,4 @@ imageio
 streamlit-extras
 streamlit-modal
 opencv-python
+base64
