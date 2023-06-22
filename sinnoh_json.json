@@ -1225,6 +1225,40 @@
       "description": "",
       "shape_type": "rectangle",
       "flags": {}
+    },
+    {
+      "label": "sinnoh-sea-route-226",
+      "points": [
+        [
+          257.2445820433436,
+          85.10371517027863
+        ],
+        [
+          285.1083591331269,
+          93.1532507739938
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "sinnoh-sea-route-230",
+      "points": [
+        [
+          257.5107296137339,
+          113.16165951359083
+        ],
+        [
+          303.4334763948498,
+          121.31616595135908
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {}
     }
   ],
   "imagePath": "Sinnoh_mapa_juegos.webp",
