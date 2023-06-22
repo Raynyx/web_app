@@ -54,7 +54,6 @@ if pokemon != '':
                             unsafe_allow_html=True)
 
                 tipos = bus.get_tipo(pokemon)
-                st.write(tipos)
                 if len(tipos) == 1:
                     img = open(f"tipos/{tipos[0]}.png")
                     content3 = img.read()
