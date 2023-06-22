@@ -39,12 +39,12 @@ if pokemon != '':
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
-            r,l3 = st.columns(2)
-            with b:
+            r,l,l2,l3 = st.columns(4)
+            with r:
                 st.markdown(
                         f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
                         unsafe_allow_html=True)
-            with h:
+            with l3:
                 bus.get_sprite(pokemon)
                 file_ = open("spriteGIF.gif", "rb")
                 contents2 = file_.read()
@@ -79,15 +79,21 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-            st.markdown(f"**:black[{select}]**")
-            file_ = open("pruebaGIF_pop.gif", "rb")
-            contents4 = file_.read()
-            data_url4 = base64.b64encode(contents4).decode("utf-8")
-            file_.close()
-            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="500" height="500" alt="cat gif">',unsafe_allow_html=True)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown(f"**:black[{select}]**")
+                st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
+                st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
+                st.markdown(f":black[Forma de captura: {method[index]}]")
+                st.markdown(f":black[Chance: {chance[index]}%]")
+            with col2:
+                file_ = open("pruebaGIF_pop.gif", "rb")
+                contents4 = file_.read()
+                data_url4 = base64.b64encode(contents4).decode("utf-8")
+                file_.close()
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="275" height="275" alt="cat gif">',
+                                unsafe_allow_html=True)
             
-
-
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
