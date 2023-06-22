@@ -41,9 +41,9 @@ gen = st.selectbox("Seleccionar generación: ", ["GEN-1","GEN-2","GEN-3","GEN-4"
 if gen == 'GEN-1':
     clicked = clickable_images(
         [
-            "https://static.wikia.nocookie.net/nintendo/images/5/59/Pokemon_Red_%28NA%29.png/revision/latest?cb=20120331144754&path-prefix=en",
+            "https://static.wikia.nocookie.net/nintendo/images/5/59/Pokemon_Red_%28NA%29.png/revision/latest/scale-to-width-down/185?cb=20120331144754&path-prefix=en",
             "https://archives.bulbagarden.net/media/upload/thumb/5/5a/Blue_EN_boxart.png/250px-Blue_EN_boxart.png",
-            "https://static.wikia.nocookie.net/pokemon/images/a/a5/Pokemon_Yellow.jpg/revision/latest?cb=20200620223058"
+            "https://static.wikia.nocookie.net/pokemon/images/a/a5/Pokemon_Yellow.jpg/revision/latest/scale-to-width-down/350?cb=20200620223058"
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
         div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
