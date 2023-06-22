@@ -77,7 +77,7 @@ if do:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='')
         st.write(select)
-        bus.pintar_ruta(select, "black")
+        bus.pinta_ruta(select, "black")
         with modal.container():
             st.markdown(f"**:black[{select}]**")
             st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
