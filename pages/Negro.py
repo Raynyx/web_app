@@ -84,7 +84,7 @@ if do:
             contents4 = file_.read()
             data_url4 = base64.b64encode(contents4).decode("utf-8")
             file_.close()
-            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="600" height="600" alt="cat gif">',unsafe_allow_html=True)
+            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="500" height="500" alt="cat gif">',unsafe_allow_html=True)
             st.markdown(f"**:black[{select}]**")
 
 
