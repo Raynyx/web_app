@@ -13,29 +13,27 @@ from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
 from streamlit_modal import Modal
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Negro y Blanco</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Negro</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
 with  b:
     st.image(
-           "https://pokemonalpha.xyz/wp-content/uploads/Pok%C3%A9mon-Negro-y-Blanco-portadas.png",
+           "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_ds_22/SI_NDS_PokemonBlack_enGB_image1600w.jpg",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
 do = False
 
-region = st.radio("Selecciona el juego:",["black","white"])
-
 if pokemon != '':
     try :
-        if bus.maps(pokemon, region) == 'not found':
+        if bus.maps(pokemon, 'black) == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, region)
+            bus.maps(pokemon, 'black')
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, region)
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'black')
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
@@ -81,13 +79,17 @@ if do:
             st.markdown(f":black[Chance: {chance[index]}%]")
             
 
-hide_pages(['RyB'])
+hide_pages(['Red'])
+hide_pages(['Blue'])
 hide_pages(['Yellow'])
-hide_pages(['OyP'])
+hide_pages(['Oro'])
+hide_pages(['Plata'])
 hide_pages(['Cristal'])
-hide_pages(['RyZ'])
+hide_pages(['Rubi'])
+hide_pages(['Zafiro'])
 hide_pages(['Esmera'])
-hide_pages(['DyP'])
+hide_pages(['Diamante'])
+hide_pages(['Perla'])
 hide_pages(['Platino'])
-hide_pages(['NyB'])
-hide_pages(['NyB2'])
+hide_pages(['Negro'])
+hide_pages(['Blanco'])
