@@ -45,7 +45,7 @@ if pokemon != '':
                         f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
                         unsafe_allow_html=True)
             with l:
-                st.write("   ")
+                st.write("                                                   ")
             with l3:
                 bus.get_sprite(pokemon)
                 file_ = open("spriteGIF.gif", "rb")
