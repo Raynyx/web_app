@@ -26,7 +26,7 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
 do = False
 
-region = st.radio("Selecciona el juego:",["black","white"]
+region = st.radio("Selecciona el juego:",["black","white"])
 
 if pokemon != '':
     try :
