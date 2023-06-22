@@ -54,8 +54,8 @@ if pokemon != '':
                             unsafe_allow_html=True)
 
                 tipos = bus.get_tipo(pokemon)
-                if len(tipos) == 1:
-                    path = f"tipos/{tipos[0]}.png"
+                for tipo in tipos:
+                    path = f"tipos/{tipo}.png"
                     st.image(path)
 
                 bus.get_audio(pokemon)
