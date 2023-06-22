@@ -79,21 +79,16 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-            col1, col2 = st.columns(2)
+            col1 = st.columns(1)
             with col1:
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="300" height="300" alt="cat gif">',unsafe_allow_html=True)
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="600" height="600" alt="cat gif">',unsafe_allow_html=True)
                 st.markdown(f"**:black[{select}]**")
 
-            with col2:
 
-                st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                st.markdown(f":black[Forma de captura: {method[index]}]")
-                st.markdown(f":black[Chance: {chance[index]}%]")
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
