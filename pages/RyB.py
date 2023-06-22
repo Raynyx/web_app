@@ -13,13 +13,13 @@ from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
 from streamlit_modal import Modal
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Rojo y Azul</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Azul</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
 with  b:
     st.image(
-           "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/02/Pokemon-Red-and-Blue-main.jpg?tf=3840x",
+           "https://images.launchbox-app.com/ec3f1419-609d-482b-b926-37ee146545a2.png",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
@@ -28,12 +28,12 @@ do = False
 
 if pokemon != '':
     try :
-        if bus.maps(pokemon, 'red') == 'not found':
+        if bus.maps(pokemon, 'blue') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, 'black')
+            bus.maps(pokemon, 'blue')
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'charmander')
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'blue')
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
@@ -63,13 +63,17 @@ if do:
             st.markdown(f"Forma de captura: {method[index]}")
             st.markdown(f"Chance: {chance[index]}%")
 
-hide_pages(['RyB'])
+hide_pages(['Red'])
+hide_pages(['Blue'])
 hide_pages(['Yellow'])
-hide_pages(['OyP'])
+hide_pages(['Oro'])
+hide_pages(['Plata'])
 hide_pages(['Cristal'])
-hide_pages(['RyZ'])
+hide_pages(['Rubi'])
+hide_pages(['Zafiro'])
 hide_pages(['Esmera'])
-hide_pages(['DyP'])
+hide_pages(['Diamante'])
+hide_pages(['Perla'])
 hide_pages(['Platino'])
-hide_pages(['NyB'])
-hide_pages(['NyB2'])
+hide_pages(['Negro'])
+hide_pages(['Blanco'])
