@@ -76,7 +76,6 @@ if do:
     if select != 'Selecciona' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='')
-        st.write(select)
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
@@ -85,6 +84,7 @@ if do:
             st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
             st.markdown(f":black[Forma de captura: {method[index]}]")
             st.markdown(f":black[Chance: {chance[index]}%]")
+            st.image("poly_pop.png")
             
 
 hide_pages(['Red'])
