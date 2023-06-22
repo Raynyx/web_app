@@ -46,6 +46,9 @@ if pokemon != '':
                         unsafe_allow_html=True)
             with l:
                 st.write("                                                   ")
+
+            with l2:
+                st.write("                                                   ")
             with l3:
                 bus.get_sprite(pokemon)
                 file_ = open("spriteGIF.gif", "rb")
