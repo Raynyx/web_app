@@ -182,6 +182,8 @@ def pinta_ruta(route, juego):
                 
     iio.mimwrite(uri="pruebaGIF_pop.gif",ims=images,loop=0, duration = 1000)
 
+    return formateado
+
 def get_sprite(pokemon):
     url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon}.gif"
     response = r.get(url)
