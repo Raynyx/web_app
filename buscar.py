@@ -123,6 +123,9 @@ def pinta_ruta(route, juego):
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto"}
     region = juegos[juego]
     
+    f = open(f"{region}_json.json")
+    data = json.load(f)
+
     imdata = base64.b64decode(data["imageData"])
     npimg = np.frombuffer(imdata, dtype=np.uint8);
     im0 = cv2.imdecode(npimg, 1)
