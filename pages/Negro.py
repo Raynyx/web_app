@@ -28,7 +28,7 @@ do = False
 
 if pokemon != '':
     try :
-        if bus.maps(pokemon, 'black) == 'not found':
+        if bus.maps(pokemon, 'black') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
             bus.maps(pokemon, 'black')
