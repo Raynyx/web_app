@@ -164,5 +164,5 @@ def get_sprite(pokemon):
 
 def get_audio(pokemon):
     url = f'https://play.pokemonshowdown.com/audio/cries/{pokemon}.mp3'
-    r = requests.get(url, allow_redirects=True)
-    open('crie.mp3', 'wb').write(r.content)
+    resp = r.get(url, allow_redirects=True)
+    open('crie.mp3', 'wb').write(resp.content)
