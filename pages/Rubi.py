@@ -13,7 +13,7 @@ from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
 from streamlit_modal import Modal
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Rojo</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Rubi</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
