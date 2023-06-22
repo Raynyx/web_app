@@ -66,10 +66,10 @@ if do:
             contents2 = file_.read()
             data_url2 = base64.b64encode(contents2).decode("utf-8")
             file_.close()
-            r,l,l2,l3 = st.columns(4)
+            #r,l,l2,l3 = st.columns(4)
             with r:
                 st.markdown(
-                        f'<img src="data:image/gif;base64,{data_url2}"  width="300" height="300" alt="cat gif">',
+                        f'<img src="data:image/gif;base64,{data_url2}"  width="200" height="200" alt="cat gif">',
                         unsafe_allow_html=True)
                 
             st.markdown(f"Nivel mínimo de la ruta: {minlevel[index]}")
