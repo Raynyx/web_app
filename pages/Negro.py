@@ -83,8 +83,8 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-            c1=st.empty()
-            with c1:
+            c1,c2,c3=st.columns(3)
+            with c2:
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
