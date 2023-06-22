@@ -15,7 +15,7 @@ from streamlit_modal import Modal
 
 st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Negro</h1>", unsafe_allow_html=True)
 
-a,b = st.columns(2) 
+a = st.columns(1) 
 
 with  a:
     st.image(
