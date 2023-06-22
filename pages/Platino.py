@@ -14,6 +14,8 @@ st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Platino</h1>",
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
+st.write("prueba1")
+
 with  b:
     st.image(
            "https://2.bp.blogspot.com/_AOu2rTRHwaI/S5xwpEKLkzI/AAAAAAAAAh0/qVvmt5ob0JU/w1200-h630-p-k-no-nu/POKEMON+PLATINO.png",
