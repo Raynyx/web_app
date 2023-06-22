@@ -12,7 +12,7 @@ a,b,c,d,e,f,g,h,i,j = st.columns(10)
 
 with  b:
     st.image(
-           "https://images.launchbox-app.com/ec3f1419-609d-482b-b926-37ee146545a2.png",
+           "https://ocremix.org/img-size/500/files/images/games/gbc/4/pokemon-silver-version-gbc-title-73670.png",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
