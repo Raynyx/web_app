@@ -54,7 +54,7 @@ if pokemon != '':
                 contents2 = file_.read()
                 data_url2 = base64.b64encode(contents2).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
+                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="150" height="150" alt="cat gif">',
                             unsafe_allow_html=True)
 
                 st.write("")
