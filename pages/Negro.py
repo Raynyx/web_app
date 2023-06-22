@@ -19,7 +19,7 @@ a,b,c,d,e,f,g,h,i,j = st.columns(10)
 
 with  b:
     st.image(
-           "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_ds_22/SI_NDS_PokemonBlack_enGB_image1600w.jpg",
+           "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxom75-e1944a3d-0511-407a-9b2b-8108e3030d21.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRjMDIwZTI2LWI0Y2EtNDljZC04MTc0LTVjMmNiODljODc4MFwvZGN4b203NS1lMTk0NGEzZC0wNTExLTQwN2EtOWIyYi04MTA4ZTMwMzBkMjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ERtmSmhxdofBxHdA0pRdy1bJe_ZO99-hpp8Wv9RNXso",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
