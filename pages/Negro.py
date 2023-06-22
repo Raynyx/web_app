@@ -56,6 +56,12 @@ if pokemon != '':
                 tipos = bus.tipos(pokemon)
                 if len(tipos) == 1:
                     img = open(f"{tipos[0]}.png")
+                    content3 = img.read()
+                    data_url3 = base64.b64encode(content3).decode("utf-8")
+                    img.close()
+                    st.markdown(
+                        f'<img src="data:image/png;base64,{data_url3}" >',
+                        unsafe_allow_html=True)
                 
                     
                 st.write()
