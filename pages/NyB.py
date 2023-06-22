@@ -56,7 +56,7 @@ if do:
         ok = st.button("BUSCAR")
     if select != 'Selecciona' and ok:
         index =  res_busqueda.index(select)
-        modal = Modal(key="Demo Key", title=f":blue[{select}]")
+        modal = Modal(key="Demo Key", title=st.markdown(f":blue[{select}]"))
         with modal.container():
             st.markdown(f":blue[Nivel mínimo de la ruta: {minlevel[index]}]")
             st.markdown(f":blue[Nivel máximo de la ruta: {maxlevel[index]}]")
