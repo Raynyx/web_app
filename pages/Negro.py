@@ -91,7 +91,7 @@ if do:
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="275" height="275" alt="cat gif">',
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="400" height="400" alt="cat gif">',
                                 unsafe_allow_html=True)
             
 
