@@ -113,7 +113,7 @@ if gen == 'GEN-4':
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
         div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
-        img_style={"margin": "5px", "height": "180px","width":"330px"},
+        img_style={"margin": "5px", "height": "200px"},
     )
     
     if clicked == 0:
@@ -129,8 +129,8 @@ if gen == 'GEN-4':
 if gen == 'GEN-5':
     clicked = clickable_images(
         [
-            "https://assets.pokemon.com/assets/cms2-es-es/img/watch-pokemon-tv/seasons/season14/season14_logo_169_es.jpg",
-            "https://www.nintenderos.com/wp-content/uploads/2012/06/pokemon-blanco-2-nintendo-ds.png?width=1200&enable=upscale",
+            "https://static.wikia.nocookie.net/espokemon/images/a/ae/Portblacksp.jpg",
+            "https://static.wikia.nocookie.net/espokemon/images/9/95/Pkmnwhitesp.jpg",
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
         div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
@@ -138,11 +138,11 @@ if gen == 'GEN-5':
     )
     
     if clicked == 0:
-        st.write("Buscando en el juego de Pokemon Negro y Blanco")
-        switch_page('NyB')
+        st.write("Buscando en el juego de Pokemon Negro")
+        switch_page('Negro')
     elif clicked == 1:
-        st.write("Buscando en el juego de Pokemon Negro 2 y Blanco 2")
-        switch_page('NyB2')
+        st.write("Buscando en el juego de Pokemon Blanco")
+        switch_page('Blanco')
     
 hide_pages(['Red'])
 hide_pages(['Blue'])
