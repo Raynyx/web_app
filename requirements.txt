@@ -1,1 +1,3 @@
-pip install st_clickable_images
+st_clickable_images
+st_pages
+imageio
