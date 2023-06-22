@@ -19,7 +19,7 @@ a,b,c,d,e,f,g,h,i,j = st.columns(10)
 
 with  b:
     st.image(
-           "https://ocremix.org/files/images/games/gbc/1/pokemon-gold-version-gbc-title-73627.png",
+           "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/game_boy_color_5/H2x1_GBC_PokemonGold_enGB_image1600w.jpg",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
