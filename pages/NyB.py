@@ -59,9 +59,8 @@ if pokemon != '':
                 audio_file = open('crie.mp3', 'rb')
                 audio_bytes = audio_file.read()
                 
-                st.audio(audio_bytes, format='audio/mp3')
+                #st.audio(audio_bytes, format='audio/mp3')
                 
-                st.write("Aquí iria el tipo del  del pokemon")
     except:
         st.error("Este pokemon no existe")
         
