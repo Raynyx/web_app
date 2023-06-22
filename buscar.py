@@ -127,9 +127,24 @@ def pinta_ruta(route, juego):
     npimg = np.frombuffer(imdata, dtype=np.uint8);
     im0 = cv2.imdecode(npimg, 1)
 
+    lugares = set()
+    for lugar in data["shapes"]:
+        lugares.add(lugar["label"])
+        
+    try:
+        numero = re.findall("\d+",route)
+        for lugar in lugares:
+            patron = r"\b" + re.escape(numero) + r"\b"
+            if lugar in res_lugar and re.search(patron, lugar):
+                formateada = lugar
+        except:
+            for lugar in lugares:
+                if lugar in res_lugar:
+                    formateado = lugar
+    
     image = im0
     for i in data["shapes"]:
-        if i["label"] == route:
+        if i["label"] == formateado:
             if teselia:
                 if "route" in i["label"]:
                     pt = np.array(i["points"], np.int32)
