@@ -39,7 +39,7 @@ if pokemon != '':
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
-            r,l,l2,l3 = st.columns(4)
+            r,l,l2,l3,l4 = st.columns(5)
             with r:
                 st.markdown(
                         f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
@@ -58,7 +58,7 @@ if pokemon != '':
                 for tipo in tipos:
                     path = f"tipos/{tipo}.png"
                     st.image(path)
-
+            with l4:
                 bus.get_audio(pokemon)
                 audio_file = open('crie.mp3', 'rb')
                 audio_bytes = audio_file.read()
@@ -78,7 +78,7 @@ if do:
         modal = Modal(key="Demo Key", title='')
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
-        with modal.container():
+        with modal.container(width=300, height=300):
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown(f"**:black[{select}]**")
@@ -91,7 +91,7 @@ if do:
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="400" height="400" alt="cat gif">',
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="300" height="300" alt="cat gif">',
                                 unsafe_allow_html=True)
             
 
