@@ -19,7 +19,7 @@ a,b,c,d,e,f,g,h,i,j = st.columns(10)
 
 with  b:
     st.image(
-           "https://datacrystal.romhacking.net/wikid/images/1/10/Pokemon_Sapphire_Title.PNG",
+           "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxoi0r-84e032c9-847d-40a8-bbe7-9715114d951e.png/v1/fill/w_600,h_320/pokemon_sapphire_logo_by_brfa98_dcxoi0r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzIwIiwicGF0aCI6IlwvZlwvNGMwMjBlMjYtYjRjYS00OWNkLTgxNzQtNWMyY2I4OWM4NzgwXC9kY3hvaTByLTg0ZTAzMmM5LTg0N2QtNDBhOC1iYmU3LTk3MTUxMTRkOTUxZS5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.pWOXWg34TGR451qVo7_R2WWHmOeX-NpWYfCsDfLE_Wc",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
