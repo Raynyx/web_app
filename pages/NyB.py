@@ -56,8 +56,8 @@ if pokemon != '':
                             unsafe_allow_html=True)
             with 1:
                 bus.get_audio(pokemon)
-                audio_file = open('crie.mp3', 'rb')
-                audio_bytes = audio_file.read()
+                # audio_file = open('crie.mp3', 'rb')
+                # audio_bytes = audio_file.read()
                 
                 #st.audio(audio_bytes, format='audio/mp3')
                 
