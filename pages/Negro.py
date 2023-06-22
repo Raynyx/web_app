@@ -66,6 +66,7 @@ if pokemon != '':
                 st.audio(audio_bytes, format='audio/mp3')
 
                 if select != "Selecciona" and ok:
+                    st.write(select)
                     bus.pintar_ruta(select, "black")
                 
                 
