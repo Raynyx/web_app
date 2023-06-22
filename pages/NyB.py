@@ -58,10 +58,10 @@ if do:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title=select)
         with modal.container():
-            st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-            st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-            st.markdown(f":black[Forma de captura: {method[index]}]")
-            st.markdown(f":black[Chance: {chance[index]}%]")
+            st.markdown(f":blue[Nivel mínimo de la ruta: {minlevel[index]}]")
+            st.markdown(f":blue[Nivel máximo de la ruta: {maxlevel[index]}]")
+            st.markdown(f":blue[Forma de captura: {method[index]}]")
+            st.markdown(f":blue[Chance: {chance[index]}%]")
             
 
 hide_pages(['RyB'])
