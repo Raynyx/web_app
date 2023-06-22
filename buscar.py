@@ -116,3 +116,41 @@ def maps(pokemon, juego):
         images.append(iio.imread(filename))
                 
     iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
+
+def pinta_ruta(route, juego):
+    
+    juegos = {"black":"teselia","white":"teselia","white-2":"teselia", "black-2":"teselia","pearl":"sinnoh",
+             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto"}
+    region = juegos[juego]
+    
+    imdata = base64.b64decode(data["imageData"])
+    npimg = np.frombuffer(imdata, dtype=np.uint8);
+    im0 = cv2.imdecode(npimg, 1)
+
+    image = im0
+    for i in data["shapes"]:
+        if i["label"] == route:
+            if teselia:
+                if "route" in i["label"]:
+                    pt = np.array(i["points"], np.int32)
+                    image = cv2.fillPoly(image, [pt], (255,0,0))
+                elif "bridge" in i["label"]:
+                    pt = diag(i["points"])
+                    pt = np.array(pt, np.int32)
+                    image = cv2.fillPoly(image, [pt], (255,0,0))
+                else:
+                    radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
+                    center = (int(i["points"][0][0]),int(i["points"][0][1]))
+                    image = cv2.circle(image, center, int(radio), (0,0,255), thickness = 3)
+            elif sinnoh:
+                pt = diag(i["points"])
+                pt = np.array(pt, np.int32)
+                image = cv2.fillPoly(image, [pt], (255,0,0))
+                
+    cv2.imwrite(r"poly_pop.png",image)
+    
+    images = []
+    for filename in [f"{region}.png","poly_pop.png"]:
+        images.append(iio.imread(filename))
+                
+    iio.mimwrite(uri="pruebaGIF_pop.gif",ims=images,loop=0, duration = 1000)
