@@ -15,17 +15,22 @@ from streamlit_modal import Modal
 
 st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Negro</h1>", unsafe_allow_html=True)
 
-a,b = st.columns(2) 
+a,b,c = st.columns(3) 
 
 with  a:
     st.image(
            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxom75-e1944a3d-0511-407a-9b2b-8108e3030d21.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRjMDIwZTI2LWI0Y2EtNDljZC04MTc0LTVjMmNiODljODc4MFwvZGN4b203NS1lMTk0NGEzZC0wNTExLTQwN2EtOWIyYi04MTA4ZTMwMzBkMjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ERtmSmhxdofBxHdA0pRdy1bJe_ZO99-hpp8Wv9RNXso",
             width=550)
 
-pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
+    pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
-do = False
+    do = False
 with b:
+    st.write(' ')
+
+
+
+with c:
     if pokemon != '':
         try :
             if bus.maps(pokemon, 'black') == 'not found':
