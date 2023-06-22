@@ -16,17 +16,64 @@ a,b,c,d,e,f,g,h,i,j = st.columns(10)
 
 with  b:
     st.image(
-           "https://images.wikidexcdn.net/mwuploads/wikidex/9/9e/latest/20090224004230/Pok%C3%A9mon_Esmeralda.png",
+           "https://images.launchbox-app.com/d3b040f9-3fbb-46b8-99b4-97a9a0760ee1.png",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
-if pokemon == 'Y':
-    st.success("Hola")
-else:
-    st.error("Adios")
+do = False
 
-hide_pages(['RyB'])
+if pokemon != '':
+    try :
+        if bus.maps(pokemon, 'red') == 'not found':
+            st.error("Este pokemon no se encuentra en esta generación")
+        else:
+            bus.maps(pokemon, 'red')
+            do = True
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'red')
+            st.success("Encontrado")
+            file_ = open("pruebaGIF.gif", "rb")
+            contents1 = file_.read()
+            data_url1 = base64.b64encode(contents1).decode("utf-8")
+            file_.close()
+            r,l,l2,l3 = st.columns(4)
+            with r:
+                st.markdown(
+                        f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
+                        unsafe_allow_html=True)
+            with l3:
+                st.write("Aquí iria el gif del pokemon")
+                st.write("Aquí iria el tipo del  del pokemon")
+    except:
+        st.error("Este pokemon no existe")
+        
+if do: 
+    with l3:
+        select = st.selectbox("Introduce ruta",['Selecciona'] + res_busqueda)
+        ok = st.button("BUSCAR")
+    if select != 'Selecciona' and ok:
+        index =  res_busqueda.index(select)
+        modal = Modal(key="Demo Key", title=select)
+        with modal.container():
+            st.markdown(f"Nivel mínimo de la ruta: {minlevel[index]}")
+            st.markdown(f"Nivel máximo de la ruta: {maxlevel[index]}")
+            st.markdown(f"Forma de captura: {method[index]}")
+            st.markdown(f"Chance: {chance[index]}%")
+
+hide_pages(['Red'])
+hide_pages(['Blue'])
+hide_pages(['Yellow'])
+hide_pages(['Oro'])
+hide_pages(['Plata'])
+hide_pages(['Cristal'])
+hide_pages(['Rubi'])
+hide_pages(['Zafiro'])
+hide_pages(['Esmera'])
+hide_pages(['Diamante'])
+hide_pages(['Perla'])
+hide_pages(['Platino'])
+hide_pages(['Negro'])
+hide_pages(['Blanco'])
 hide_pages(['Yellow'])
 hide_pages(['OyP'])
 hide_pages(['Cristal'])
