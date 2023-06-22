@@ -1,5 +1,5 @@
-dst_clickable_images
-st_pages
+dst-clickable-images
+st-pages
 imageio
 streamlit-extras
 streamlit-modal
