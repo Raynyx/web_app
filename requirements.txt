@@ -1,4 +1,5 @@
 st_clickable_images
 st_pages
 imageio
-streamlit_extras
+streamlit-extras
+streamlit-modal
