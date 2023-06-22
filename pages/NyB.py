@@ -48,7 +48,7 @@ if pokemon != '':
                         unsafe_allow_html=True)
             with l3:
                 bus.get_sprite(pokemon)
-                file_ = open("pruebaGIF.gif", "rb")
+                file_ = open("spriteGIF.gif", "rb")
                 contents2 = file_.read()
                 data_url2 = base64.b64encode(contents2).decode("utf-8")
                 file_.close()
