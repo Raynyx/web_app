@@ -41,8 +41,9 @@ gen = st.selectbox("Seleccionar generación: ", ["GEN-1","GEN-2","GEN-3","GEN-4"
 if gen == 'GEN-1':
     clicked = clickable_images(
         [
-            "https://upload.wikimedia.org/wikipedia/commons/8/8e/Pok%C3%A9mon_RB_logo.png",
-            "https://upload.wikimedia.org/wikipedia/commons/d/d0/Pok%C3%A9mon_Yellow_Logo.png",
+            "https://static.wikia.nocookie.net/nintendo/images/5/59/Pokemon_Red_%28NA%29.png/revision/latest?cb=20120331144754&path-prefix=en",
+            "https://archives.bulbagarden.net/media/upload/thumb/5/5a/Blue_EN_boxart.png/250px-Blue_EN_boxart.png",
+            "https://static.wikia.nocookie.net/pokemon/images/a/a5/Pokemon_Yellow.jpg/revision/latest?cb=20200620223058"
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
         div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
@@ -50,9 +51,12 @@ if gen == 'GEN-1':
     )
     
     if clicked == 0:
-        st.write("Buscando en el juego de Pokemon Rojo y Azul")
-        switch_page('RyB')
+        st.write("Buscando en el juego de Pokemon Rojo")
+        switch_page('Red')
     elif clicked == 1:
+        st.write("Buscando en el juego de Pokemon Azul")
+        switch_page('Blue')
+    elif clicked == 2:
         st.write("Buscando en el juego de Pokemon Amarillo")
         switch_page('Yellow')
         
