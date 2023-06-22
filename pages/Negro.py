@@ -55,7 +55,9 @@ if pokemon != '':
 
                 tipos = bus.get_tipo(pokemon)
                 if len(tipos) == 1:
-                    img = open(f"web_app/tipos/{tipos[0]}.png")
+                    path = fr"web_app/tipos/{tipos[0]}.png"
+                    st.write(path)
+                    img = open(path)
                     content3 = img.read()
                     data_url3 = base64.b64encode(content3).decode("utf-8")
                     img.close()
