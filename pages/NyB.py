@@ -55,11 +55,12 @@ if pokemon != '':
                 st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
                             unsafe_allow_html=True)
 
+                bus.get_audio(pokemon)
                 audio_file = open('crie.mp3', 'rb')
                 audio_bytes = audio_file.read()
                 
                 st.audio(audio_bytes, format='audio/mp3')
-                bus.get_audio(pokemon)
+                
                 
                 
     except:
