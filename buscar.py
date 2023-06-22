@@ -123,6 +123,13 @@ def pinta_ruta(route, juego):
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto"}
     region = juegos[juego]
     
+    sinnoh, teselia, kanto = False, False, False
+    if region == "teselia":
+        teselia = True
+    elif region == "sinnoh":
+        sinnoh = True
+    elif region == "kanto":
+        kanto = True
     f = open(f"{region}_json.json")
     data = json.load(f)
 
