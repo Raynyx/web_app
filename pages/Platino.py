@@ -13,7 +13,7 @@ from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
 from streamlit_modal import Modal
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Perla</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Platino</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
@@ -28,12 +28,12 @@ do = False
 
 if pokemon != '':
     try :
-        if bus.maps(pokemon, 'pearl') == 'not found':
+        if bus.maps(pokemon, 'platinum') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, 'pearl')
+            bus.maps(pokemon, 'platinum')
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'pearl')
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'platinum')
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
