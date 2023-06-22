@@ -83,21 +83,18 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-            c1,c2,c3=st.columns(3)
-                
-            with c2:
-                file_ = open("pruebaGIF_pop.gif", "rb")
-                contents4 = file_.read()
-                data_url4 = base64.b64encode(contents4).decode("utf-8")
-                file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="500" height="500" alt="cat gif">',
+            file_ = open("pruebaGIF_pop.gif", "rb")
+            contents4 = file_.read()
+            data_url4 = base64.b64encode(contents4).decode("utf-8")
+            file_.close()
+            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="500" height="500" alt="cat gif">',
                                     unsafe_allow_html=True)
-                with st.expander("Pokemon info"):
-                    st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                    st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                    st.markdown(f":black[Forma de captura: {method[index]}]")
-                    st.markdown(f":black[Chance: {chance[index]}%]")
+            with st.expander("Pokemon info"):
+                st.markdown(f"**:black[{select}]**")
+                st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
+                st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
+                st.markdown(f":black[Forma de captura: {method[index]}]")
+                st.markdown(f":black[Chance: {chance[index]}%]")
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
