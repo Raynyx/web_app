@@ -42,7 +42,7 @@ if pokemon != '':
             r,l,l2,l3 = st.columns(4)
             with r:
                 st.markdown(
-                        f'<img src="data:image/gif;base64,{data_url1}"  width="100" height="100" alt="cat gif">',
+                        f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
                         unsafe_allow_html=True)
             with l3:
                 bus.get_sprite(pokemon)
@@ -89,7 +89,7 @@ if do:
             contents4 = file_.read()
             data_url4 = base64.b64encode(contents4).decode("utf-8")
             file_.close()
-            st.markdown(f'<img src="data:image/gif;base64,{data_url4}"  alt="cat gif">',
+            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="80" height="80" alt="cat gif">',
                             unsafe_allow_html=True)
             
 
