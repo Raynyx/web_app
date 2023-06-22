@@ -137,10 +137,10 @@ def pinta_ruta(route, juego):
             patron = r"\b" + re.escape(numero) + r"\b"
             if lugar in res_lugar and re.search(patron, lugar):
                 formateada = lugar
-        except:
-            for lugar in lugares:
-                if lugar in res_lugar:
-                    formateado = lugar
+    except:
+        for lugar in lugares:
+            if lugar in res_lugar:
+                formateado = lugar
     
     image = im0
     for i in data["shapes"]:
