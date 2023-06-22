@@ -85,12 +85,12 @@ if do:
         with modal.container():
             x,y,z=st.columns(3)
             with x:
-                st.write("        ")
+                
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="500" height="500" alt="gif">',
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width=700" height="700" alt="gif">',
                                         unsafe_allow_html=True)
             with st.expander("Pokemon info"):
                 st.markdown(f"**:black[{select}]**")
