@@ -13,29 +13,27 @@ from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
 from streamlit_modal import Modal
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Diamante y Perla</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Diamante</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
 with  b:
     st.image(
-           "https://www.dexerto.es/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.es/wp-content/uploads/sites/3/2021/03/Pokemon-Diamante-y-Perla-exclusivos-Que-diferencias-hay.jpg",
+           "https://images.launchbox-app.com/ec3f1419-609d-482b-b926-37ee146545a2.png",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
 do = False
 
-region = st.radio("Selecciona el juego:",["pearl","diamond"])
-
 if pokemon != '':
     try :
-        if bus.maps(pokemon, region) == 'not found':
-            st.error("Este pokemon no tiene encounter en esta generación")
+        if bus.maps(pokemon, 'diamond') == 'not found':
+            st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, region)
+            bus.maps(pokemon, 'diamond')
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, region)
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'diamond')
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
@@ -60,29 +58,22 @@ if do:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title=select)
         with modal.container():
-            bus.pintar_ruta(select, region)
-            
-            file_ = open("pruebaGIF_pop.gif", "rb")
-            contents2 = file_.read()
-            data_url2 = base64.b64encode(contents2).decode("utf-8")
-            file_.close()
-            #r,l,l2,l3 = st.columns(4)
-            with r:
-                st.markdown(
-                        f'<img src="data:image/gif;base64,{data_url2}"  width="200" height="200" alt="cat gif">',
-                        unsafe_allow_html=True)
-                
             st.markdown(f"Nivel mínimo de la ruta: {minlevel[index]}")
             st.markdown(f"Nivel máximo de la ruta: {maxlevel[index]}")
             st.markdown(f"Forma de captura: {method[index]}")
             st.markdown(f"Chance: {chance[index]}%")
-hide_pages(['RyB'])
+
+hide_pages(['Red'])
+hide_pages(['Blue'])
 hide_pages(['Yellow'])
-hide_pages(['OyP'])
+hide_pages(['Oro'])
+hide_pages(['Plata'])
 hide_pages(['Cristal'])
-hide_pages(['RyZ'])
+hide_pages(['Rubi'])
+hide_pages(['Zafiro'])
 hide_pages(['Esmera'])
-hide_pages(['DyP'])
+hide_pages(['Diamante'])
+hide_pages(['Perla'])
 hide_pages(['Platino'])
-hide_pages(['NyB'])
-hide_pages(['NyB2'])
+hide_pages(['Negro'])
+hide_pages(['Blanco'])
