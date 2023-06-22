@@ -115,4 +115,4 @@ def maps(pokemon, juego):
     for filename in [f"{region}.png","poly.png"]:
         images.append(iio.imread(filename))
                 
-    iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 100)
+    iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
