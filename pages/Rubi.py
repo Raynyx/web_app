@@ -19,7 +19,7 @@ a,b,c,d,e,f,g,h,i,j = st.columns(10)
 
 with  b:
     st.image(
-           "https://images.launchbox-app.com/ec3f1419-609d-482b-b926-37ee146545a2.png",
+           "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxoi05-bb06c6c0-47ed-4838-9bcd-85bb0339e9a0.png/v1/fill/w_600,h_320/pokemon_omega_ruby_logo_by_brfa98_dcxoi05-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzIwIiwicGF0aCI6IlwvZlwvNGMwMjBlMjYtYjRjYS00OWNkLTgxNzQtNWMyY2I4OWM4NzgwXC9kY3hvaTA1LWJiMDZjNmMwLTQ3ZWQtNDgzOC05YmNkLTg1YmIwMzM5ZTlhMC5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.t6PWGvqX1YG_r0DVwLGjFc0dPAsvsy7QG8rRoAd3gxs",
             width=550)
 
 pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
