@@ -107,8 +107,9 @@ if gen == 'GEN-3':
 if gen == 'GEN-4':
     clicked = clickable_images(
         [
-            "https://cdn.atomix.vg/wp-content/uploads/2014/03/Pokemon-Diamond-Pearl.png",
-            "https://upload.wikimedia.org/wikipedia/commons/d/d7/Pokemon_Platinum_Version_logo.png",
+            "https://m.media-amazon.com/images/I/51oEpmg-6ZL.jpg",
+            "https://i.ebayimg.com/images/a/(KGrHqN,!ikE1NjksNPGBNiBTsiRtw~~/s-l600.jpg",
+            "https://m.media-amazon.com/images/I/61KlGWIg4YL._AC_UF1000,1000_QL80_.jpg"
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
         div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
@@ -116,9 +117,12 @@ if gen == 'GEN-4':
     )
     
     if clicked == 0:
-        st.write("Buscando en el juego de Pokemon Diamante y Perla")
-        switch_page('DyP')
+        st.write("Buscando en el juego de Pokemon Diamante")
+        switch_page('Diamante')
     elif clicked == 1:
+        st.write("Buscando en el juego de Pokemon Perla")
+        switch_page('Perla')
+    elif clicked == 2:
         st.write("Buscando en el juego de Pokemon Platino")
         switch_page('Platino')
         
