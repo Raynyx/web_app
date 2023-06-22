@@ -31,7 +31,7 @@ if pokemon != '':
         if bus.maps(pokemon, 'pearl') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, 'black')
+            bus.maps(pokemon, 'pearl')
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'pearl')
             st.success("Encontrado")
