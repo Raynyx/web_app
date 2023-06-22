@@ -57,9 +57,6 @@ if pokemon != '':
                 if len(tipos) == 1:
                     path = fr"web_app/tipos/{tipos[0]}.png"
                     st.image(path)
-                
-                    
-                st.write()
 
                 bus.get_audio(pokemon)
                 audio_file = open('crie.mp3', 'rb')
