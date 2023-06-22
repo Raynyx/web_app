@@ -39,7 +39,7 @@ if pokemon != '':
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
-            r,l,l2,l3 = st.columns(4)
+            r,l3 = st.columns([9,1])
             with r:
                 st.markdown(
                         f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
@@ -79,13 +79,13 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-
+            st.markdown(f"**:black[{select}]**")
             file_ = open("pruebaGIF_pop.gif", "rb")
             contents4 = file_.read()
             data_url4 = base64.b64encode(contents4).decode("utf-8")
             file_.close()
             st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="500" height="500" alt="cat gif">',unsafe_allow_html=True)
-            st.markdown(f"**:black[{select}]**")
+            
 
 
 
