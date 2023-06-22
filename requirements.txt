@@ -1,7 +1,7 @@
-st_clickable_images
+dst_clickable_images
 st_pages
 imageio
 streamlit-extras
 streamlit-modal
-opencv-python
+opencv-python-headless
 base64
