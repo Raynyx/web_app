@@ -35,6 +35,7 @@ if pokemon != '':
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'ruby')
             st.success("Encontrado")
             st.image("poly.png")
+            st.image("hoenn.png")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
