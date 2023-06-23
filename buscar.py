@@ -122,7 +122,7 @@ def maps(pokemon, juego):
         if '.png' in filename:
             images.append(iio.imread(filename))
 
-    iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
+    #iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
 
 
 
