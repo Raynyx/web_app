@@ -29,6 +29,7 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 do = False
 
 if pokemon != '':
+    try:
         if bus.maps(pokemon, 'ruby') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
@@ -69,6 +70,8 @@ if pokemon != '':
                 audio_bytes = audio_file.read()
                 
                 st.audio(audio_bytes, format='audio/mp3')
+      except:
+          st.error("Este pokemon no existe")
         
 if do: 
     with l3:
