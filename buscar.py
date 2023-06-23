@@ -121,8 +121,8 @@ def maps(pokemon, juego):
 
 def pinta_ruta(route, juego):
     
-    juegos = {"black":"teselia","white":"teselia","white-2":"teselia", "black-2":"teselia","pearl":"sinnoh",
-             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto"}
+    juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
+             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto"}
     region = juegos[juego]
     
     sinnoh, teselia, kanto = False, False, False
