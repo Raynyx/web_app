@@ -27,7 +27,6 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 do = False
 
 if pokemon != '':
-    try :
         if bus.maps(pokemon, 'sapphire') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
@@ -35,7 +34,11 @@ if pokemon != '':
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'sapphire')
             st.success("Encontrado")
-            file_ = open("pruebaGIF.gif", "rb")
+            #im1 = cv2.imread('poly.png')
+            #im2 = cv2.imread('hoenn.png')
+            #st.write(im1.shape)
+            #st.write(im2.shape)
+            file_ = open("png_to_gif.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
@@ -64,8 +67,6 @@ if pokemon != '':
                 audio_bytes = audio_file.read()
                 
                 st.audio(audio_bytes, format='audio/mp3')
-    except:
-        st.error("Este pokemon no existe")
         
 if do: 
     with l3:
@@ -79,7 +80,7 @@ if do:
         with modal.container():
             x,y,z,x1,y1,z1=st.columns(6)
             with y:
-                file_ = open("pruebaGIF_pop.gif", "rb")
+                file_ = open("png_to_gif_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
