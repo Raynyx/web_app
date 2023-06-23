@@ -50,7 +50,8 @@ def diag(punto):
 
 def maps(pokemon, juego):
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
-             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto"}
+             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto", 
+              "oro":"jhoto", "plata":"jhoto","cristal":"jhoto"}
     region = juegos[juego]
     
     res_busqueda, minlevel, maxlevel, method, chance = locations(pokemon, juego)
@@ -58,13 +59,15 @@ def maps(pokemon, juego):
     if len(res_busqueda) == 0:
         return "not found"
     
-    sinnoh, teselia, kanto = False, False, False
+    sinnoh, teselia, kanto, jhoto = False, False, False, False
     if region == "teselia":
         teselia = True
     elif region == "sinnoh":
         sinnoh = True
     elif region == "kanto":
         kanto = True
+    elif region == "jhoto":
+        jhoto = True
     f = open(f"{region}_json.json")
     data = json.load(f)
     
@@ -104,7 +107,7 @@ def maps(pokemon, juego):
                     radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
                     center = (int(i["points"][0][0]),int(i["points"][0][1]))
                     image = cv2.circle(image, center, int(radio), (0,0,255), thickness = 3)
-            elif sinnoh or kanto:
+            elif sinnoh or kanto or jhoto:
                 pt = diag(i["points"])
                 pt = np.array(pt, np.int32)
                 image = cv2.fillPoly(image, [pt], (255,0,0))
@@ -122,16 +125,20 @@ def maps(pokemon, juego):
 def pinta_ruta(route, juego):
     
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
-             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto"}
+             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto",
+             "oro":"jhoto", "plata":"jhoto","cristal":"jhoto"}
     region = juegos[juego]
     
-    sinnoh, teselia, kanto = False, False, False
+    sinnoh, teselia, kanto, jhoto = False, False, False, False
     if region == "teselia":
         teselia = True
     elif region == "sinnoh":
         sinnoh = True
     elif region == "kanto":
         kanto = True
+    elif region == "jhoto":
+        jhoto = True
+        
     f = open(f"{region}_json.json")
     data = json.load(f)
 
@@ -169,7 +176,7 @@ def pinta_ruta(route, juego):
                     radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
                     center = (int(i["points"][0][0]),int(i["points"][0][1]))
                     image = cv2.circle(image, center, int(radio), (0,0,255), thickness = 3)
-            elif sinnoh or kanto:
+            elif sinnoh or kanto or jhoto:
                 pt = diag(i["points"])
                 pt = np.array(pt, np.int32)
                 image = cv2.fillPoly(image, [pt], (255,0,0))
