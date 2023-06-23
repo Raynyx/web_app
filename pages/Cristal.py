@@ -7,8 +7,11 @@ Created on Tue Jun 20 08:20:22 2023
 
 import streamlit as st
 import base64
+import re
 from st_pages import Page, show_pages, hide_pages
 from streamlit_extras.switch_page_button import switch_page
+import buscar as bus
+from streamlit_modal import Modal
 
 st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Cristal</h1>", unsafe_allow_html=True)
 
@@ -24,9 +27,10 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 do = False
 
 if pokemon != '':
-    if bus.maps(pokemon, 'crystal') == 'not found':
+    try :
+        if bus.maps(pokemon, 'crystal') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
-    else:
+        else:
             bus.maps(pokemon, 'crystal')
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'crystal')
@@ -60,6 +64,8 @@ if pokemon != '':
                 audio_bytes = audio_file.read()
                 
                 st.audio(audio_bytes, format='audio/mp3')
+    except:
+        st.error("Este pokemon no existe")
         
 if do: 
     with l3:
@@ -98,6 +104,3 @@ hide_pages(['Zafiro'])
 hide_pages(['Esmera'])
 hide_pages(['Diamante'])
 hide_pages(['Perla'])
-hide_pages(['Platino'])
-hide_pages(['Negro'])
-hide_pages(['Blanco'])
