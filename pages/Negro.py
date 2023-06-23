@@ -92,7 +92,7 @@ if do:
                 file_.close()
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="600" height="600" alt="gif">',
                                         unsafe_allow_html=True)
-            with st.expander("Pokemon info"):
+        with st.expander("Pokemon info"):
                 st.markdown(f"**:black[{select}]**")
                 st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
                 st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
