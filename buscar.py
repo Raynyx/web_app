@@ -51,7 +51,7 @@ def diag(punto):
 def maps(pokemon, juego):
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto", 
-              "oro":"jhoto", "plata":"jhoto","cristal":"jhoto"}
+              "gold":"jhoto", "silver":"jhoto","cristal":"jhoto"}
     region = juegos[juego]
     
     res_busqueda, minlevel, maxlevel, method, chance = locations(pokemon, juego)
@@ -126,7 +126,7 @@ def pinta_ruta(route, juego):
     
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto",
-             "oro":"jhoto", "plata":"jhoto","cristal":"jhoto"}
+             "gold":"jhoto", "silver":"jhoto","cristal":"jhoto"}
     region = juegos[juego]
     
     sinnoh, teselia, kanto, jhoto = False, False, False, False
