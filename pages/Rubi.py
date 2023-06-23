@@ -28,12 +28,12 @@ do = False
 
 if pokemon != '':
     try :
-        if bus.maps(pokemon, 'red') == 'not found':
+        if bus.maps(pokemon, 'ruby') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, 'red')
+            bus.maps(pokemon, 'ruby')
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'red')
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'ruby')
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
