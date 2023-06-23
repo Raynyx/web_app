@@ -49,8 +49,8 @@ def diag(punto):
     return res
 
 def maps(pokemon, juego):
-    juegos = {"black":"teselia","white":"teselia","white-2":"teselia", "black-2":"teselia","pearl":"sinnoh",
-             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto"}
+    juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
+             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yello":"kanto"}
     region = juegos[juego]
     
     res_busqueda, minlevel, maxlevel, method, chance = locations(pokemon, juego)
