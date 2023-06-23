@@ -12,6 +12,7 @@ import base64
 import numpy as np
 import imageio as iio
 import re
+from PIL import Image
 
 def locations(pokemon, juego):
     resp = r.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}/")
