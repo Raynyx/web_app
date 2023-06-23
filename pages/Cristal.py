@@ -25,12 +25,12 @@ do = False
 
 if pokemon != '':
     try :
-        if bus.maps(pokemon, 'cristal') == 'not found':
+        if bus.maps(pokemon, 'crystal') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
         else:
-            bus.maps(pokemon, 'cristal')
+            bus.maps(pokemon, 'crystal')
             do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'cristal')
+            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'crystal')
             st.success("Encontrado")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
@@ -71,7 +71,7 @@ if do:
     if select != 'Selecciona' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
-        formateado = bus.pinta_ruta(select, "cristal")
+        formateado = bus.pinta_ruta(select, "crystal")
         st.write(formateado)
         with modal.container():
             x,y,z,x1,y1,z1=st.columns(6)
