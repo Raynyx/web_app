@@ -13,6 +13,8 @@ from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
 from streamlit_modal import Modal
 
+import cv2
+
 st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Rubi</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
@@ -34,8 +36,11 @@ if pokemon != '':
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'ruby')
             st.success("Encontrado")
-            st.image("poly.png")
             st.image("hoenn.png")
+            im1 = cv2.imread('poly.png')
+            im2 = cv2.imread('hoenn.png')
+            st.write(im1.shape)
+            st.write(im2.shape)
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
