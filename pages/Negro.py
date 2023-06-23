@@ -83,8 +83,8 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-            x,y,z=st.columns(3)
-            with y:
+            x,y,z,x1,y1,z1=st.columns(6)
+            with z:
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
@@ -92,7 +92,7 @@ if do:
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="400" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
 
-            with st.expander("Pokemon info",expanded=True):
+            with st.expander("Pokemon info"):
                     st.markdown(f"**:black[{select}]**")
                     st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
                     st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
