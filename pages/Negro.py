@@ -95,7 +95,7 @@ if do:
                 st.write("")
                 st.write("")
                 st.write("")
-                with st.expander("Pokemon info"):
+                with st.expander("Pokemon info",expanded=True):
                         st.markdown(f"**:black[{select}]**")
                         st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
                         st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
