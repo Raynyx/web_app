@@ -26,7 +26,7 @@ do = False
 if pokemon != '':
     if bus.maps(pokemon, 'crystal') == 'not found':
             st.error("Este pokemon no se encuentra en esta generación")
-        else:
+    else:
             bus.maps(pokemon, 'crystal')
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'crystal')
