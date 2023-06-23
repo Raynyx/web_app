@@ -153,9 +153,7 @@ def pinta_ruta(route, juego):
         for lugar in lugares:
             if lugar in route:
                 formateado = lugar
-
-    return formateado
-    
+                
     image = im0
     for i in data["shapes"]:
         if i["label"] == formateado:
