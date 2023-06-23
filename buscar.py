@@ -204,7 +204,18 @@ def pinta_ruta(route, juego):
     for filename in [f"{region}.png","poly_pop.png"]:
         images.append(iio.imread(filename))
                 
-    iio.mimwrite(uri="pruebaGIF_pop.gif",ims=images,loop=0, duration = 1000)
+    if region != 'hoenn':
+        iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
+    else:
+        frames = []
+        for i in [f"{region}.png","poly.png"]:
+            new_frame = Image.open(i)
+            frames.append(new_frame)
+
+        frames[0].save('png_to_gif.gif', format='GIF',
+                   append_images=frames[1:],
+                   save_all=True,
+                   duration=300, loop=0)
 
     return formateado
 
