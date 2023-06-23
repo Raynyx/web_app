@@ -83,7 +83,7 @@ if do:
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
         with modal.container():
-            x,y,z=st.columns(3)
+            w,x,y,z=st.columns(4)
             with x:
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
@@ -92,6 +92,8 @@ if do:
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="400" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
             with z:
+                st.write("")
+                st.write("")
                 st.write("")
                 with st.expander("Pokemon info"):
                         st.markdown(f"**:black[{select}]**")
