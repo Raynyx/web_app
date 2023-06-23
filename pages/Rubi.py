@@ -82,7 +82,7 @@ if do:
         with modal.container():
             x,y,z,x1,y1,z1=st.columns(6)
             with y:
-                file_ = open("png_to_gif_pop.gif", "rb")
+                file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
