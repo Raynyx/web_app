@@ -77,26 +77,26 @@ if do:
     with l3:
         select = st.selectbox("Introduce ruta",['Selecciona'] + res_busqueda)
         ok = st.button("BUSCAR")
-    if select != 'Selecciona' and ok:
-        index =  res_busqueda.index(select)
-        modal = Modal(key="Demo Key", title='',max_width='1000px')
-        formateado = bus.pinta_ruta(select, "black")
-        st.write(formateado)
-        with modal.container():
-            x,y,z=st.columns(3)
-            with x:
-                file_ = open("pruebaGIF_pop.gif", "rb")
-                contents4 = file_.read()
-                data_url4 = base64.b64encode(contents4).decode("utf-8")
-                file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="600" height="600" alt="gif">',
+if select != 'Selecciona' and ok:
+    index =  res_busqueda.index(select)
+    modal = Modal(key="Demo Key", title='',max_width='1000px')
+    formateado = bus.pinta_ruta(select, "black")
+    st.write(formateado)
+    with modal.container():
+        x,y,z=st.columns(3)
+        with x:
+            file_ = open("pruebaGIF_pop.gif", "rb")
+            contents4 = file_.read()
+            data_url4 = base64.b64encode(contents4).decode("utf-8")
+            file_.close()
+            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="600" height="600" alt="gif">',
                                             unsafe_allow_html=True)
-            with st.expander("Pokemon info"):
-                    st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                    st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                    st.markdown(f":black[Forma de captura: {method[index]}]")
-                    st.markdown(f":black[Chance: {chance[index]}%]")
+        with st.expander("Pokemon info"):
+                st.markdown(f"**:black[{select}]**")
+                st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
+                st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
+                st.markdown(f":black[Forma de captura: {method[index]}]")
+                st.markdown(f":black[Chance: {chance[index]}%]")
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
