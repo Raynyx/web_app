@@ -91,7 +91,7 @@ if do:
                 file_.close()
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="400" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
-            with z:
+            with y:
                 st.write("")
                 st.write("")
                 st.write("")
