@@ -84,14 +84,14 @@ if do:
         st.write(formateado)
         with modal.container():
             w,x,y,z=st.columns(4)
-            with x:
+            with w:
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="400" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
-            with z:
+            with y:
                 st.write("")
                 st.write("")
                 st.write("")
