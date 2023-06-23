@@ -117,11 +117,10 @@ def maps(pokemon, juego):
 
     cv2.imwrite(r"poly.png",image)
     
-    """images = []
+    images = []
     for filename in [f"{region}.png","poly.png"]:
         images.append(iio.imread(filename))
-                
-    iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)"""
+    iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
 
 
 
