@@ -80,7 +80,6 @@ if do:
         formateado = bus.pinta_ruta(select, "ruby")
         st.write(formateado)
         with modal.container():
-            st.image("poly_pop.png")
             x,y,z,x1,y1,z1=st.columns(6)
             with y:
                 file_ = open("png_to_gif_pop.gif", "rb")
