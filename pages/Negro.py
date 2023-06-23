@@ -82,16 +82,15 @@ if do:
         modal = Modal(key="Demo Key", title='')
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
-        with modal.container():
+        """with modal.container():
             x,y,z=st.columns(3)
             with x:
-                
                 file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="600" height="600" alt="gif">',
-                                        unsafe_allow_html=True)
+                                        unsafe_allow_html=True)"""
         with st.expander("Pokemon info"):
                 st.markdown(f"**:black[{select}]**")
                 st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
