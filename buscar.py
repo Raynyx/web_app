@@ -121,8 +121,18 @@ def maps(pokemon, juego):
     for filename in [f"{region}.png","poly.png"]:
         if '.png' in filename:
             images.append(iio.imread(filename))
+    if region != 'hoenn':
+        iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
+    else:
+        frames = []
+        for i in [f"{region}.png","poly.png"]:
+            new_frame = Image.open(i)
+            frames.append(new_frame)
 
-    #iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
+        frames[0].save('png_to_gif.gif', format='GIF',
+                   append_images=frames[1:],
+                   save_all=True,
+                   duration=300, loop=0)
 
 
 
