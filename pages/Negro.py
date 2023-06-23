@@ -82,8 +82,7 @@ if do:
         modal = Modal(key="Demo Key", title='')
         formateado = bus.pinta_ruta(select, "black")
         st.write(formateado)
-        if open_modal:
-            modal.open()
+        modal.open()
 
         if modal.is_open():
             with modal.container():
