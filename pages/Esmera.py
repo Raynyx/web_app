@@ -26,47 +26,50 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
 do = False
 
-if pokemon != '':
-        if bus.maps(pokemon, 'emerald') == 'not found':
-            st.error("Este pokemon no se encuentra en esta generación")
-        else:
-            bus.maps(pokemon, 'emerald')
-            do = True
-            res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'emerald')
-            st.success("Encontrado")
-            #im1 = cv2.imread('poly.png')
-            #im2 = cv2.imread('hoenn.png')
-            #st.write(im1.shape)
-            #st.write(im2.shape)
-            file_ = open("png_to_gif.gif", "rb")
-            contents1 = file_.read()
-            data_url1 = base64.b64encode(contents1).decode("utf-8")
-            file_.close()
-            r,l,l2,l3 = st.columns(4)
-            with r:
-                st.markdown(
-                        f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
-                        unsafe_allow_html=True)
-            with l3:
-                bus.get_sprite(pokemon)
-                file_ = open("spriteGIF.gif", "rb")
-                contents2 = file_.read()
-                data_url2 = base64.b64encode(contents2).decode("utf-8")
+try:    
+    if pokemon != '':
+            if bus.maps(pokemon, 'emerald') == 'not found':
+                st.error("Este pokemon no se encuentra en esta generación")
+            else:
+                bus.maps(pokemon, 'emerald')
+                do = True
+                res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'emerald')
+                st.success("Encontrado")
+                #im1 = cv2.imread('poly.png')
+                #im2 = cv2.imread('hoenn.png')
+                #st.write(im1.shape)
+                #st.write(im2.shape)
+                file_ = open("png_to_gif.gif", "rb")
+                contents1 = file_.read()
+                data_url1 = base64.b64encode(contents1).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
+                r,l,l2,l3 = st.columns(4)
+                with r:
+                    st.markdown(
+                            f'<img src="data:image/gif;base64,{data_url1}"  width="500" height="500" alt="cat gif">',
                             unsafe_allow_html=True)
-
-                st.write("")
-                tipos = bus.get_tipo(pokemon)
-                for tipo in tipos:
-                    path = f"tipos/{tipo}.png"
-                    st.image(path)
-
-                bus.get_audio(pokemon)
-                audio_file = open('crie.mp3', 'rb')
-                audio_bytes = audio_file.read()
-                
-                st.audio(audio_bytes, format='audio/mp3')
+                with l3:
+                    bus.get_sprite(pokemon)
+                    file_ = open("spriteGIF.gif", "rb")
+                    contents2 = file_.read()
+                    data_url2 = base64.b64encode(contents2).decode("utf-8")
+                    file_.close()
+                    st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
+                                unsafe_allow_html=True)
+    
+                    st.write("")
+                    tipos = bus.get_tipo(pokemon)
+                    for tipo in tipos:
+                        path = f"tipos/{tipo}.png"
+                        st.image(path)
+    
+                    bus.get_audio(pokemon)
+                    audio_file = open('crie.mp3', 'rb')
+                    audio_bytes = audio_file.read()
+                    
+                    st.audio(audio_bytes, format='audio/mp3')
+    except:
+        st.error("Este pokemón no existe")
         
 if do: 
     with l3:
