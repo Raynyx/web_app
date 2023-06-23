@@ -26,8 +26,8 @@ pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
 
 do = False
 
-try:    
-    if pokemon != '':
+if pokemon != '':
+    try:
             if bus.maps(pokemon, 'emerald') == 'not found':
                 st.error("Este pokemon no se encuentra en esta generación")
             else:
