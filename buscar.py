@@ -155,7 +155,7 @@ def pinta_ruta(route, juego):
     elif region == "jhoto":
         jhoto = True
     elif region == "hoenn":
-        hoenn == True
+        hoenn = True
     f = open(f"{region}_json.json")
     data = json.load(f)
 
