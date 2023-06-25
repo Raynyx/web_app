@@ -219,7 +219,7 @@ def pinta_ruta(route, juego):
 
     return formateado
 
-def formatear(rutas, juego):
+def formatear(res_busqueda, juego):
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto",
              "gold":"jhoto", "silver":"jhoto","crystal":"jhoto",
