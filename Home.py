@@ -19,11 +19,11 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Buscador de Pokemon</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Searcher</h1>", unsafe_allow_html=True)
 
-st.markdown("<h3 style='text-align: center; color: black;'>¿Quieres saber donde encontrar un pokemón?</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: black;'>Do you need to know where to find a pokemon?</h3>", unsafe_allow_html=True)
 
-st.markdown("<text style='text-align: center; color: black;'>Pokemon siempre a sido uno de los juegos que mayor número de jugadores a tenido. Por lo que cada vez hay más jugadores nuevos y no sabe donde pueden buscar un pokemon que quieren. Por ello usando este app será mucho más fácil. </text>", unsafe_allow_html=True)
+st.markdown("<text style='text-align: center; color: black;'>Pokemon has always been one of the games that has had the largest number of players. So there are more and more new players and they don't know where they can look for a pokemon they want. Therefore using this app will be much easier. </text>", unsafe_allow_html=True)
 
 file_ = open("Pikachu.gif", "rb")
 file_2 = open("Pikachu2.gif", "rb")
@@ -43,7 +43,7 @@ with _right:
     f'<img src="data:image/gif;base64,{data_url2}"  width="250" height="250" alt="cat gif">',
     unsafe_allow_html=True)
 
-gen = st.selectbox("Seleccionar generación: ", ["GEN-1","GEN-2","GEN-3","GEN-4","GEN-5"])
+gen = st.selectbox("Select the generation: ", ["GEN-1","GEN-2","GEN-3","GEN-4","GEN-5"])
 
 if gen == 'GEN-1':
     clicked = clickable_images(
@@ -165,8 +165,3 @@ hide_pages(['Perla'])
 hide_pages(['Platino'])
 hide_pages(['Negro'])
 hide_pages(['Blanco'])
-
-if st.button("*Boton oculto*"):
-    modal = Modal(key="Demo Key", title='')
-    with modal.container():
-        st.markdown('No hay nada XD')
