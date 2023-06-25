@@ -74,7 +74,7 @@ if pokemon != '':
         
 if do: 
     with l3:
-        res_busqueda = bus.formatear(res_busqueda, 'black')
+        res_busqueda = bus.formatear(res_busqueda, 'gold')
         select = st.selectbox("Introduce route",['Select'] + res_busqueda)
         ok = st.button("SEARCH")
     if select != 'Select' and ok:
