@@ -75,7 +75,7 @@ if pokemon != '':
 if do: 
     with l3:
         select = st.selectbox("Introduce route",['Select'] + res_busqueda)
-        ok = st.button("Search")
+        ok = st.button("SEARCH")
     if select != 'Select' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
