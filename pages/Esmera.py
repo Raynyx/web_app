@@ -15,12 +15,10 @@ from streamlit_modal import Modal
 
 st.set_page_config(
     page_title="Pokemon Emerald",
-    page_icon="🔅",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_icon="🔅"
 )
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Esmeralda</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Emerald</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
@@ -29,19 +27,19 @@ with  b:
            "https://images.launchbox-app.com/d3b040f9-3fbb-46b8-99b4-97a9a0760ee1.png",
             width=550)
 
-pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
+pokemon = st.text_input("Introduce the Pokemon you want to search:")
 
 do = False
 
 if pokemon != '':
     try:
             if bus.maps(pokemon, 'emerald') == 'not found':
-                st.error("Este pokemon no se encuentra en esta generación")
+                st.error("This pokemon can not be found in this generation")
             else:
                 bus.maps(pokemon, 'emerald')
                 do = True
                 res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'emerald')
-                st.success("Encontrado")
+                st.success("Found")
                 #im1 = cv2.imread('poly.png')
                 #im2 = cv2.imread('hoenn.png')
                 #st.write(im1.shape)
@@ -76,13 +74,13 @@ if pokemon != '':
                     
                     st.audio(audio_bytes, format='audio/mp3')
     except:
-        st.error("Este pokemón no existe")
+        st.error("This Pokemon do not exist")
         
 if do: 
     with l3:
-        select = st.selectbox("Introduce ruta",['Selecciona'] + res_busqueda)
-        ok = st.button("BUSCAR")
-    if select != 'Selecciona' and ok:
+        select = st.selectbox("Introduce route",['Select'] + res_busqueda)
+        ok = st.button("SEARCH")
+    if select != 'Select' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
         formateado = bus.pinta_ruta(select, "emerald")
