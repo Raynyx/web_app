@@ -20,7 +20,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Platino</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Platinum</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
@@ -29,19 +29,19 @@ with  b:
            "https://www.nintenderos.com/wp-content/uploads/2019/09/H2x1_NDS_PokemonPlatinum_esES_image1600w-e1568403709829.jpg",
             width=550)
 
-pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
+pokemon = st.text_input("Introduce the Pokemon you want to search:")
 
 do = False
 
 if pokemon != '':
     try :
         if bus.maps(pokemon, 'platinum') == 'not found':
-            st.error("Este pokemon no se encuentra en esta generación")
+            st.error("This pokemon can not be found in this generation")
         else:
             bus.maps(pokemon, 'platinum')
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'platinum')
-            st.success("Encontrado")
+            st.success("Found")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
@@ -71,13 +71,13 @@ if pokemon != '':
                 
                 st.audio(audio_bytes, format='audio/mp3')
     except:
-        st.error("Este pokemon no existe")
+        st.error("This Pokemon do not exist")
         
 if do: 
     with l3:
-        select = st.selectbox("Introduce ruta",['Selecciona'] + res_busqueda)
-        ok = st.button("BUSCAR")
-    if select != 'Selecciona' and ok:
+        select = st.selectbox("Introduce route",['Select'] + res_busqueda)
+        ok = st.button("SEARCH")
+    if select != 'Select' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
         formateado = bus.pinta_ruta(select, "platinum")
@@ -94,9 +94,9 @@ if do:
 
             with st.expander("Pokemon info"):
                     st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                    st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                    st.markdown(f":black[Forma de captura: {method[index]}]")
+                    st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
+                    st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
+                    st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Chance: {chance[index]}%]")
 
 
