@@ -34,12 +34,12 @@ do = False
 if pokemon != '':
     try :
         if bus.maps(pokemon, 'blue') == 'not found':
-            st.error("Este pokemon no se encuentra en esta generación")
+            st.error("This pokemon can not be found in this generation")
         else:
             bus.maps(pokemon, 'blue')
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'blue')
-            st.success("Encontrado")
+            st.success("Found")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
@@ -70,12 +70,12 @@ if pokemon != '':
                 
                 st.audio(audio_bytes, format='audio/mp3')
     except:
-        st.error("Este pokemon no existe")
+        st.error("This Pokemon do not exist")
         
 if do: 
     with l3:
-        select = st.selectbox("Introduce ruta",['Selecciona'] + res_busqueda)
-        ok = st.button("BUSCAR")
+        select = st.selectbox("Introduce route",['Select'] + res_busqueda)
+        ok = st.button("SEARCH")
     if select != 'Selecciona' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
@@ -93,9 +93,9 @@ if do:
 
             with st.expander("Pokemon info"):
                     st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                    st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                    st.markdown(f":black[Forma de captura: {method[index]}]")
+                    st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
+                    st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
+                    st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Chance: {chance[index]}%]")
 
 hide_pages(['Red'])
