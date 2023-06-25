@@ -8,9 +8,7 @@ from streamlit_modal import Modal
 
 st.set_page_config(
     page_title="Pokemon Silver",
-    page_icon="🔅",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_icon="🔅"
 )
 
 st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Silver</h1>", unsafe_allow_html=True)
