@@ -15,12 +15,10 @@ from streamlit_modal import Modal
 
 st.set_page_config(
     page_title="Pokemon Blue",
-    page_icon="🔅",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_icon="🔅"
 )
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Azul</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Blue</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
