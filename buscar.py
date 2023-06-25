@@ -167,16 +167,7 @@ def pinta_ruta(route, juego):
     for lugar in data["shapes"]:
         lugares.add(lugar["label"])
         
-    try:
-        numero = re.findall("\d+",route)
-        for lugar in lugares:
-            patron = r"\b" + re.escape(numero) + r"\b"
-            if lugar in route and re.search(patron, lugar):
-                formateada = lugar
-    except:
-        for lugar in lugares:
-            if lugar in route:
-                formateado = lugar
+    formateado = route.replace(' ','-')
                 
     image = im0
     for i in data["shapes"]:
