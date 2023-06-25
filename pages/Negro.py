@@ -86,7 +86,6 @@ if do:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
         formateado = bus.pinta_ruta(select, "black")
-        st.write(formateado)
         with modal.container():
             x,y,z,x1,y1,z1=st.columns(6)
             with y:
