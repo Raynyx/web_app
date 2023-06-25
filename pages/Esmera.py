@@ -97,9 +97,9 @@ if do:
 
             with st.expander("Pokemon info"):
                     st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                    st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                    st.markdown(f":black[Forma de captura: {method[index]}]")
+                    st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
+                    st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
+                    st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Chance: {chance[index]}%]")
 
 hide_pages(['Red'])
