@@ -219,6 +219,45 @@ def pinta_ruta(route, juego):
 
     return formateado
 
+def formatear(rutas):
+    juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
+             "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto",
+             "gold":"jhoto", "silver":"jhoto","crystal":"jhoto",
+             "ruby":"hoenn", "sapphire":"hoenn","emerald":"hoenn"}
+    region = juegos[juego]
+    
+    sinnoh, teselia, kanto, jhoto, hoenn = False, False, False, False, False
+    if region == "teselia":
+        teselia = True
+    elif region == "sinnoh":
+        sinnoh = True
+    elif region == "kanto":
+        kanto = True
+    elif region == "jhoto":
+        jhoto = True
+    elif region == "hoenn":
+        hoenn = True
+    f = open(f"{region}_json.json")
+    data = json.load(f)
+    
+    lugares = set()
+    for lugar in data["shapes"]:
+        lugares.add(lugar["label"])
+    
+    formateado = set()
+    for res_lugar in res_busqueda:
+        try:
+            numero = re.findall("\d+",res_lugar)
+            for lugar in lugares:
+                patron = r"\b" + re.escape(numero) + r"\b"
+                if lugar in res_lugar and re.search(patron, lugar):
+                    formateado.add(lugar)
+        except:
+            for lugar in lugares:
+                if lugar in res_lugar:
+                    formateado.add(lugar)
+    return formateado
+
 def get_sprite(pokemon):
     url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon}.gif"
     response = r.get(url)
