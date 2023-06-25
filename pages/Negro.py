@@ -15,12 +15,10 @@ from streamlit_modal import Modal
 
 st.set_page_config(
     page_title="Pokemon Black",
-    page_icon="🔅",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_icon="🔅"
 )
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Negro</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Black</h1>", unsafe_allow_html=True)
 
 a,b,c,d,e,f,g,h,i,j = st.columns(10) 
 
@@ -29,19 +27,19 @@ with  b:
            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxom75-e1944a3d-0511-407a-9b2b-8108e3030d21.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRjMDIwZTI2LWI0Y2EtNDljZC04MTc0LTVjMmNiODljODc4MFwvZGN4b203NS1lMTk0NGEzZC0wNTExLTQwN2EtOWIyYi04MTA4ZTMwMzBkMjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ERtmSmhxdofBxHdA0pRdy1bJe_ZO99-hpp8Wv9RNXso",
             width=550)
 
-pokemon = st.text_input("Introduce el pokemon que quieres buscar:")
+pokemon = st.text_input("Introduce the Pokemon you want to search:")
 
 do = False
 
 if pokemon != '':
     try :
         if bus.maps(pokemon, 'black') == 'not found':
-            st.error("Este pokemon no se encuentra en esta generación")
+            st.error("This pokemon can not be found in this generation")
         else:
             bus.maps(pokemon, 'black')
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'black')
-            st.success("Encontrado")
+            st.success("Found")
             file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
@@ -78,13 +76,13 @@ if pokemon != '':
                     
                 
     except:
-        st.error("Este pokemon no existe")
+        st.error("This Pokemon do not exist")
         
 if do: 
     with l3:
-        select = st.selectbox("Introduce ruta",['Selecciona'] + res_busqueda)
-        ok = st.button("BUSCAR")
-    if select != 'Selecciona' and ok:
+        select = st.selectbox("Introduce route",['Select'] + res_busqueda)
+        ok = st.button("SEARCH")
+    if select != 'Select' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
         formateado = bus.pinta_ruta(select, "black")
@@ -101,9 +99,9 @@ if do:
 
             with st.expander("Pokemon info"):
                     st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Nivel mínimo de la ruta: {minlevel[index]}]")
-                    st.markdown(f":black[Nivel máximo de la ruta: {maxlevel[index]}]")
-                    st.markdown(f":black[Forma de captura: {method[index]}]")
+                    st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
+                    st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
+                    st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Chance: {chance[index]}%]")
 
 hide_pages(['Red'])
