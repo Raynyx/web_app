@@ -13,7 +13,7 @@ import buscar as bus
 from streamlit_modal import Modal
 
 st.set_page_config(
-    page_title="Pokemon Searcher",
+    page_title="Pokemon White",
     page_icon="🔅",
     layout="wide",
     initial_sidebar_state="expanded",
