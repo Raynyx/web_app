@@ -12,6 +12,13 @@ from st_pages import Page, show_pages, hide_pages
 from streamlit_extras.switch_page_button import switch_page
 from streamlit_modal import Modal
 
+st.set_page_config(
+    page_title="Pokemon Searcher",
+    page_icon="🔅",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 st.markdown("<h1 style='text-align: center; color: grey;'>Buscador de Pokemon</h1>", unsafe_allow_html=True)
 
 st.markdown("<h3 style='text-align: center; color: black;'>¿Quieres saber donde encontrar un pokemón?</h3>", unsafe_allow_html=True)
