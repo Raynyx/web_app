@@ -256,7 +256,12 @@ def formatear(res_busqueda, juego):
             for lugar in lugares:
                 if lugar in res_lugar:
                     formateado.add(lugar)
-    return list(formateado)
+
+    formateado_Final = []
+    for route in formateado:
+        route_F = route.replace('-', ' ')
+        formateado_Final.append(route_F)
+    return list(formateado_Final)
 
 def get_sprite(pokemon):
     url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon}.gif"
