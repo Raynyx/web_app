@@ -61,7 +61,7 @@ if pokemon != '':
                 h = dim[0] * 5
                 w = dim[1] * 5
                 st.write(h)
-                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width=w height=h alt="cat gif">',
+                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width={w} height={h} alt="cat gif">',
                             unsafe_allow_html=True)
                 st.write("")
                 tipos = bus.get_tipo(pokemon)
