@@ -92,7 +92,9 @@ if do:
                                                 unsafe_allow_html=True)
 
             with st.expander("Pokemon info"):
-                    st.markdown(f"**:black[{select}].capitalize()**")
+                    name=f":black[{select}]"
+                    name=name.capitalize()
+                    st.markdown(f"**name**")
                     st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
                     st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
                     st.markdown(f":black[Way of capture: {method[index]}]")
