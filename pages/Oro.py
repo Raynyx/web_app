@@ -103,8 +103,9 @@ if bug:
     modal = Modal(key="Demo Key", title='',max_width='1000px')
     with modal.container():
         bug=st.text_input("What bug did you have?")
-        f = open("/bugs/bug.txt", "wr")
+        f = open("../bugs/bug.txt", "wr")
         f.write(f"{pokemon};gold;{bug}\n")
+        f.close()
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
