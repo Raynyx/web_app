@@ -20,8 +20,9 @@ with  b:
            "https://images.launchbox-app.com/ec3f1419-609d-482b-b926-37ee146545a2.png",
             width=550)
 
-pokemon = st.text_input("Introduce the Pokemon you want to search:")
-pokemon = pokemon.lower()
+poke_list=open("./pokemon-list-en.txt",'r')
+poke_list=[i[:-1] for i in poke_list]
+pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 do = False
 
 if pokemon != '':
