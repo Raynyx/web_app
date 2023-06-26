@@ -27,8 +27,8 @@ with  b:
            "https://images.launchbox-app.com/37d480c8-9daf-4796-b851-6de25cf66e91.png",
             width=550)
 
-poke_list=open("./pokemon-list-en.txt",'r')
-poke_list=[i[:-1] for i in poke_list]
+poke_list=open("./lists/gen1.txt",'r')
+poke_list=[i[:-1].lower() for i in poke_list]
 pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 
 do = False
