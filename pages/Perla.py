@@ -21,8 +21,8 @@ with  b:
            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxolpc-e1ef145f-2646-450d-9423-c3a88e3d7a5c.png/v1/fill/w_600,h_320/pokemon_pearl_logo_by_brfa98_dcxolpc-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzIwIiwicGF0aCI6IlwvZlwvNGMwMjBlMjYtYjRjYS00OWNkLTgxNzQtNWMyY2I4OWM4NzgwXC9kY3hvbHBjLWUxZWYxNDVmLTI2NDYtNDUwZC05NDIzLWMzYTg4ZTNkN2E1Yy5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.XfVPc2YYOSrSzDvkw_1yjr76Dm8-ZnusTrc6NUKqK5g",
             width=550)
 
-poke_list=open("./pokemon-list-en.txt",'r')
-poke_list=[i[:-1] for i in poke_list]
+poke_list=open("./lists/gen4.txt",'r')
+poke_list=[i[:-1].lower() for i in poke_list]
 pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 do = False
 
