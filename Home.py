@@ -34,11 +34,11 @@ file_2.close()
 _left, _right = st.columns(2)
 with _left:
     st.markdown(
-    f'<img src="data:image/gif;base64,{data_url1}"  width="250" height="250" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url1}"  width="250" height="250" alt="gif">',
     unsafe_allow_html=True)
 with _right:
     st.markdown(
-    f'<img src="data:image/gif;base64,{data_url2}"  width="250" height="250" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url2}"  width="250" height="250" alt="gif">',
     unsafe_allow_html=True)
 
 gen = st.selectbox("Select the generation: ", ["GEN-1","GEN-2","GEN-3","GEN-4","GEN-5"])
@@ -51,7 +51,7 @@ if gen == 'GEN-1':
             "https://archives.bulbagarden.net/media/upload/thumb/9/95/Yellow_EN_boxart.png/250px-Yellow_EN_boxart.png"
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
-        div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
+        div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap", "cursor":"pointer"},
         img_style={"margin": "5px", "height": "200px"},
     )
     
