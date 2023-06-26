@@ -27,8 +27,8 @@ with  b:
            "https://fotografias-neox.atresmedia.com/clipping/cmsimages01/2017/11/17/294EBDF4-47AB-4915-9E4F-BE26997F500B/98.jpg?crop=1280,720,x0,y0&width=1900&height=1069&optimize=high&format=webply",
             width=550)
 
-poke_list=open("./pokemon-list-en.txt",'r')
-poke_list=[i[:-1] for i in poke_list]
+poke_list=open("./lists/gen2.txt",'r')
+poke_list=[i[:-1].lower() for i in poke_list]
 pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 
 do = False
