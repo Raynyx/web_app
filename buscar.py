@@ -73,7 +73,7 @@ def maps(pokemon, juego):
         jhoto = True
     elif region == "hoenn":
         hoenn = True
-    f = open(fr"/maps/{region}_json.json")
+    f = open(f"/maps/{region}_json.json")
     data = json.load(f)
     
     lugares = set()
