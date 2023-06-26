@@ -46,8 +46,6 @@ if pokemon != '':
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
-            dim = Image.open("pruebaGIF.gif")
-            st.write(dim.size)
             r,l,l2,l3 = st.columns(4)
             with r:
                 st.markdown(
@@ -59,6 +57,8 @@ if pokemon != '':
                 contents2 = file_.read()
                 data_url2 = base64.b64encode(contents2).decode("utf-8")
                 file_.close()
+                dim = Image.open("spriteGIF.gif")
+                st.write(dim.size)
                 st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
                             unsafe_allow_html=True)
                 st.write("")
