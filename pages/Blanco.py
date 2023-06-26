@@ -26,8 +26,12 @@ with  b:
            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c020e26-b4ca-49cd-8174-5c2cb89c8780/dcxom7u-edead424-4a99-4c3a-975b-99126d343dd6.png/v1/fill/w_600,h_320/pokemon_white_logo_by_brfa98_dcxom7u-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzIwIiwicGF0aCI6IlwvZlwvNGMwMjBlMjYtYjRjYS00OWNkLTgxNzQtNWMyY2I4OWM4NzgwXC9kY3hvbTd1LWVkZWFkNDI0LTRhOTktNGMzYS05NzViLTk5MTI2ZDM0M2RkNi5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.6BRIsYp90TWle-Xl8tvHD8Qjxd6pKDJ6lpWt382ojvg",
             width=550)
 
-pokemon = st.text_input("Introduce the Pokemon you want to search:")
-pokemon = pokemon.lower()
+
+poke_list=open("./pokemon-list-en.txt",'r')
+poke_list=[i for i in poke_list]
+Pokemon = st.selectbox("Introduce pokemon",poke_list)
+
+
 do = False
 
 if pokemon != '':
