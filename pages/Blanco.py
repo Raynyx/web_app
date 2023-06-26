@@ -105,7 +105,7 @@ if bug:
     with modal.container():
         bug=st.text_input("What bug did you have?")
         f = open("./bugs/bug.txt", "w")
-        f.write(f"{pokemon};gold;{bug}\n")
+        f.write(f"{pokemon};white;{bug}\n")
         f.close()
 
 
