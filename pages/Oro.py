@@ -97,6 +97,7 @@ if do:
                     st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
                     st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Encounter chance: {chance[index]}%]")
+st.write("")
 bug = st.button("Report Bug")
 
 hide_pages(['Red'])
