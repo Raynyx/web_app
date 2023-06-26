@@ -30,7 +30,8 @@ with  b:
 pokemon = st.text_input("Introduce the Pokemon you want to search:")
 pokemon = pokemon.lower()
 do = False
-
+with j:
+    bug = st.button("Report Bug")
 if pokemon != '':
     try :
         if bus.maps(pokemon, 'gold') == 'not found':
@@ -77,7 +78,6 @@ if do:
         res_busqueda = bus.formatear(res_busqueda, 'gold')
         select = st.selectbox("Introduce route",['Select'] + res_busqueda)
         ok = st.button("SEARCH")
-        bug = st.button("Report Bug")
     if select != 'Select' and ok:
         index =  res_busqueda.index(select)
         modal = Modal(key="Demo Key", title='',max_width='1000px')
