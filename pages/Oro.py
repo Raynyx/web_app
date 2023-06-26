@@ -103,7 +103,7 @@ if bug:
     modal = Modal(key="Demo Key", title='',max_width='1000px')
     with modal.container():
         bug=st.text_input("What bug did you have?")
-        f = open("/bugs/bug.txt", "w+")
+        f = open("/bugs/bug.txt", "w")
         f.write(f"{pokemon};gold;{bug}\n")
         f.close()
 
