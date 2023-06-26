@@ -11,6 +11,7 @@ import re
 from st_pages import Page, show_pages, hide_pages
 from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
+from PIL import Image
 from streamlit_modal import Modal
 
 st.set_page_config(
