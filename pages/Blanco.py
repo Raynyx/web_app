@@ -27,7 +27,7 @@ with  b:
             width=550)
 
 pokemon = st.text_input("Introduce the Pokemon you want to search:")
-
+pokemon = pokemon.lower()
 do = False
 
 if pokemon != '':
