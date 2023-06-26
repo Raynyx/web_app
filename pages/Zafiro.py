@@ -29,7 +29,7 @@ with  b:
             width=550)
 
 poke_list=open("./lists/gen3.txt",'r')
-poke_list=[i[:-1] for i in poke_list]
+poke_list=[i[:-1].lower() for i in poke_list]
 pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 do = False
 
