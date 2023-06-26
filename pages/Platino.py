@@ -97,7 +97,7 @@ if do:
                 file_.close()
                 st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="450" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
-
+                st.write("")
             with st.expander("Pokemon info"):
                     st.markdown(f":black[Selected area: {select}]")
                     st.markdown(f":black[Minimum level for this route: {minlevel[index]}]")
