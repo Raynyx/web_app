@@ -73,7 +73,7 @@ def maps(pokemon, juego):
         jhoto = True
     elif region == "hoenn":
         hoenn = True
-    f = open(f"/maps/{region}_json.json")
+    f = open(f"./maps/{region}_json.json")
     data = json.load(f)
     
     lugares = set()
@@ -117,17 +117,17 @@ def maps(pokemon, juego):
                 pt = np.array(pt, np.int32)
                 image = cv2.fillPoly(image, [pt], color)
 
-    cv2.imwrite(r"/maps/poly.png",image)
+    cv2.imwrite(r"./maps/poly.png",image)
     
     images = []
-    for filename in [f"/empty_map/{region}.png","/maps/poly.png"]:
+    for filename in [f"./empty_map/{region}.png","./maps/poly.png"]:
         if '.png' in filename:
             images.append(iio.imread(filename))
     if region != 'hoenn':
         iio.mimwrite(uri="pruebaGIF.gif",ims=images,loop=0, duration = 1000)
     else:
         frames = []
-        for i in [f"/empty_map/{region}.png","/maps/poly.png"]:
+        for i in [f"./empty_map/{region}.png","./maps/poly.png"]:
             new_frame = Image.open(i)
             frames.append(new_frame)
 
@@ -157,7 +157,7 @@ def pinta_ruta(route, juego):
         jhoto = True
     elif region == "hoenn":
         hoenn = True
-    f = open(f"/maps/{region}_json.json")
+    f = open(f"./maps/{region}_json.json")
     data = json.load(f)
 
     imdata = base64.b64decode(data["imageData"])
@@ -190,17 +190,17 @@ def pinta_ruta(route, juego):
                 pt = np.array(pt, np.int32)
                 image = cv2.fillPoly(image, [pt], color)
                 
-    cv2.imwrite(r"/maps/poly_pop.png",image)
+    cv2.imwrite(r"./maps/poly_pop.png",image)
     
     images = []
-    for filename in [f"/empty_map/{region}.png","/maps/poly_pop.png"]:
+    for filename in [f"./empty_map/{region}.png","./maps/poly_pop.png"]:
         images.append(iio.imread(filename))
                 
     if region != "hoenn":
         iio.mimwrite(uri="pruebaGIF_pop.gif",ims=images,loop=0, duration = 1000)
     else:
         frames_pop = []
-        for i in [f"/empty_map/{region}.png","/maps/poly_pop.png"]:
+        for i in [f"./empty_map/{region}.png","./maps/poly_pop.png"]:
             new_frame_pop = Image.open(i)
             frames_pop.append(new_frame_pop)
 
@@ -229,7 +229,7 @@ def formatear(res_busqueda, juego):
         jhoto = True
     elif region == "hoenn":
         hoenn = True
-    f = open(f"/maps/{region}_json.json")
+    f = open(f"./maps/{region}_json.json")
     data = json.load(f)
     
     lugares = set()
