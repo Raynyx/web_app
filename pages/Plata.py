@@ -85,11 +85,11 @@ if do:
                                                 unsafe_allow_html=True)
 
             with st.expander("Pokemon info"):
-                    st.markdown(f"**:black[{select}]**")
-                    st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
+                    st.markdown(f":black[Selected area: {select}]")
+                    st.markdown(f":black[Minimum level for this route: {minlevel[index]}]")
                     st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
                     st.markdown(f":black[Way of capture: {method[index]}]")
-                    st.markdown(f":black[Chance: {chance[index]}%]")
+                    st.markdown(f":black[Encounter chance: {chance[index]}%]")
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
