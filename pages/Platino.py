@@ -57,9 +57,11 @@ if pokemon != '':
                 contents2 = file_.read()
                 data_url2 = base64.b64encode(contents2).decode("utf-8")
                 file_.close()
-                dim = Image.open("spriteGIF.gif")
-                st.write(dim.size)
-                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
+                dim = Image.open("spriteGIF.gif").size
+                h = dim[0] * 1.2
+                w = dim[1] * 1.2
+                st.write()
+                st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width=w height=h alt="cat gif">',
                             unsafe_allow_html=True)
                 st.write("")
                 tipos = bus.get_tipo(pokemon)
