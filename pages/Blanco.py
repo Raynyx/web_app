@@ -28,7 +28,7 @@ with  b:
 
 
 poke_list=open("./pokemon-list-en.txt",'r')
-poke_list=[i for i in poke_list]
+poke_list=[i[:-1] for i in poke_list]
 pokemon = st.selectbox("Introduce pokemon",['write']+poke_list)
 
 
