@@ -44,7 +44,7 @@ if pokemon != '':
             do = True
             res_busqueda, minlevel, maxlevel, method, chance = bus.locations(pokemon, 'white')
             st.success("Found")
-            file_ = open("./maps/pruebaGIF.gif", "rb")
+            file_ = open("pruebaGIF.gif", "rb")
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
@@ -92,7 +92,7 @@ if do:
         with modal.container():
             x,y,z,x1,y1,z1=st.columns(6)
             with y:
-                file_ = open("./maps/pruebaGIF_pop.gif", "rb")
+                file_ = open("pruebaGIF_pop.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
