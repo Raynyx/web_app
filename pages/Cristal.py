@@ -98,6 +98,17 @@ if do:
                     st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Encounter chance: {chance[index]}%]")
 
+st.write("")
+bug = st.button("Report Bug")
+if bug:
+    modal = Modal(key="Demo Key", title='',max_width='1000px')
+    with modal.container():
+        bug=st.text_input("What bug did you have?")
+        f = open("./bugs/bug.txt", "w")
+        f.write(f"{pokemon};crystal;{bug}\n")
+        f.close()
+
+
 hide_pages(['Red'])
 hide_pages(['Blue'])
 hide_pages(['Yellow'])
