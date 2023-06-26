@@ -94,7 +94,7 @@ if do:
             with st.expander("Pokemon info"):
                     name=f":black[{select}]"
                     name=name.capitalize()
-                    st.markdown(f"**name**")
+                    st.markdown(f"**{name}**")
                     st.markdown(f":black[Minime level for this route: {minlevel[index]}]")
                     st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
                     st.markdown(f":black[Way of capture: {method[index]}]")
