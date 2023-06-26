@@ -29,7 +29,7 @@ with  b:
 
 poke_list=open("./pokemon-list-en.txt",'r')
 poke_list=[i for i in poke_list]
-Pokemon = st.selectbox("Introduce pokemon",poke_list)
+pokemon = st.selectbox("Introduce pokemon",poke_list)
 
 
 do = False
