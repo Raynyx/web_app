@@ -50,7 +50,7 @@ def diag(punto):
     return res
 
 def maps(pokemon, juego):
-    color = (160,255,0)
+    color = (0,155,255)
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto", 
               "gold":"jhoto", "silver":"jhoto","crystal":"jhoto",
@@ -139,7 +139,7 @@ def maps(pokemon, juego):
 
 
 def pinta_ruta(route, juego):
-    color = (160,255,0)
+    color = (0,155,255)
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto",
              "gold":"jhoto", "silver":"jhoto","crystal":"jhoto",
