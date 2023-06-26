@@ -21,7 +21,7 @@ st.markdown("<h1 style='text-align: center; color: grey;'>Pokemon Searcher</h1>"
 
 st.markdown("<h3 style='text-align: center; color: black;'>Do you need to know where to find a pokemon?</h3>", unsafe_allow_html=True)
 
-st.markdown("<text style='text-align: center; color: black;'>Pokemon has always been one of the games that has had the largest number of players. So there are more and more new players and they don't know where they can look for a pokemon they want. Therefore using this app will be much easier. </text>", unsafe_allow_html=True)
+st.markdown("<text style='text-align: center; color: black;'>Need to know where any Pokémon is located to catch it for your team? We got you covered! (Up to Gen V.) Just search the Pokémon you need and we'll show you where you can find it. </text>", unsafe_allow_html=True)
 
 file_ = open("Pikachu.gif", "rb")
 file_2 = open("Pikachu2.gif", "rb")
