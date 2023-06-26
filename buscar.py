@@ -127,11 +127,11 @@ def maps(pokemon, juego):
         iio.mimwrite(uri="/maps/pruebaGIF.gif",ims=images,loop=0, duration = 1000)
     else:
         frames = []
-        for i in [f"{region}.png","poly.png"]:
+        for i in [f"/empty_map/{region}.png","/maps/poly.png"]:
             new_frame = Image.open(i)
             frames.append(new_frame)
 
-        frames[0].save('png_to_gif.gif', format='GIF',
+        frames[0].save('/maps/png_to_gif.gif', format='GIF',
                    append_images=frames[1:],
                    save_all=True,
                    duration=300, loop=0)
@@ -200,11 +200,11 @@ def pinta_ruta(route, juego):
         iio.mimwrite(uri="/maps/pruebaGIF_pop.gif",ims=images,loop=0, duration = 1000)
     else:
         frames_pop = []
-        for i in [f"{region}.png","poly_pop.png"]:
+        for i in [f"/empty_map/{region}.png","/maps/poly_pop.png"]:
             new_frame_pop = Image.open(i)
             frames_pop.append(new_frame_pop)
 
-        frames_pop[0].save('png_to_gif_pop.gif', format='GIF',
+        frames_pop[0].save('/maps/png_to_gif_pop.gif', format='GIF',
                    append_images=frames_pop[1:],
                    save_all=True,
                    duration=300, loop=0)
@@ -229,7 +229,7 @@ def formatear(res_busqueda, juego):
         jhoto = True
     elif region == "hoenn":
         hoenn = True
-    f = open(f"{region}_json.json")
+    f = open(f"/maps/{region}_json.json")
     data = json.load(f)
     
     lugares = set()
