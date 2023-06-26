@@ -134,7 +134,7 @@ def maps(pokemon, juego):
         frames[0].save('png_to_gif.gif', format='GIF',
                    append_images=frames[1:],
                    save_all=True,
-                   duration=300, loop=0)
+                   duration=1000, loop=0)
 
 
 
@@ -207,7 +207,7 @@ def pinta_ruta(route, juego):
         frames_pop[0].save('png_to_gif_pop.gif', format='GIF',
                    append_images=frames_pop[1:],
                    save_all=True,
-                   duration=300, loop=0)
+                   duration=1000, loop=0)
 
     return formateado
 
