@@ -11,7 +11,7 @@ import re
 from st_pages import Page, show_pages, hide_pages
 from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
-from PIL import Image
+import imageio
 from streamlit_modal import Modal
 
 st.set_page_config(
@@ -56,7 +56,7 @@ if pokemon != '':
                 file_ = open("spriteGIF.gif", "rb")
                 contents2 = file_.read()
                 data_url2 = base64.b64encode(contents2).decode("utf-8")
-                dim = Image.open("spriteGIF.gif")
+                dim = imageio.mimread("spriteGIF.gif")
                 st.write(dim)
                 file_.close()
                 st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width="100" height="100" alt="cat gif">',
