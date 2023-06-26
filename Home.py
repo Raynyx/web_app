@@ -41,7 +41,7 @@ with _right:
     f'<img src="data:image/gif;base64,{data_url2}"  width="250" height="250" alt="gif">',
     unsafe_allow_html=True)
 
-gen = st.selectbox("Select the generation: ", ["GEN-1","GEN-2","GEN-3","GEN-4","GEN-5"])
+gen = st.selectbox("Select the generation and click the game icon: ", ["GEN-1","GEN-2","GEN-3","GEN-4","GEN-5"])
 
 if gen == 'GEN-1':
     clicked = clickable_images(
