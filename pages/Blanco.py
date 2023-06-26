@@ -36,7 +36,7 @@ pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_lis
 do = False
 
 if pokemon != '':
-    try :
+
         if bus.maps(pokemon, 'white') == 'not found':
             st.error("This pokemon can not be found in this generation")
         else:
@@ -77,8 +77,7 @@ if pokemon != '':
                 
                 
                 
-    except:
-        st.error("This Pokemon do not exist")
+
         
 if do: 
     with l3:
