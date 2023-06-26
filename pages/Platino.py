@@ -11,6 +11,7 @@ import re
 from st_pages import Page, show_pages, hide_pages
 from streamlit_extras.switch_page_button import switch_page
 import buscar as bus
+from PIL import Image
 from streamlit_modal import Modal
 
 st.set_page_config(
@@ -45,6 +46,8 @@ if pokemon != '':
             contents1 = file_.read()
             data_url1 = base64.b64encode(contents1).decode("utf-8")
             file_.close()
+            dim = Image.open("pruebaGIF.gif")
+            st.write(dim.size)
             r,l,l2,l3 = st.columns(4)
             with r:
                 st.markdown(
