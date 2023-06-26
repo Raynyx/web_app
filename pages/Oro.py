@@ -102,7 +102,9 @@ bug = st.button("Report Bug")
 if bug:
     modal = Modal(key="Demo Key", title='',max_width='1000px')
     with modal.container():
-        st.text_input("What bug did you have?")
+        bug=st.text_input("What bug did you have?")
+        f = open("/bugs/bug.txt", "wr")
+        f.write(f"{pokemon};gold;{bug}\n")
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
