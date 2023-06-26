@@ -14,7 +14,7 @@ import buscar as bus
 from streamlit_modal import Modal
 
 st.set_page_config(
-    page_title="Pokemon Platinium",
+    page_title="Pokemon Platinum",
     page_icon="🔅"
 )
 
@@ -96,7 +96,15 @@ if do:
                     st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
                     st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Encounter chance: {chance[index]}%]")
-
+st.write("")
+bug = st.button("Report Bug")
+if bug:
+    modal = Modal(key="Demo Key", title='',max_width='1000px')
+    with modal.container():
+        bug=st.text_input("What bug did you have?")
+        f = open("./bugs/bug.txt", "w")
+        f.write(f"{pokemon};platinum;{bug}\n")
+        f.close()
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
