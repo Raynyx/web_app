@@ -30,8 +30,7 @@ with  b:
 pokemon = st.text_input("Introduce the Pokemon you want to search:")
 pokemon = pokemon.lower()
 do = False
-with j:
-    bug = st.button("Report Bug")
+
 if pokemon != '':
     try :
         if bus.maps(pokemon, 'gold') == 'not found':
@@ -98,7 +97,7 @@ if do:
                     st.markdown(f":black[Maximum level for this route: {maxlevel[index]}]")
                     st.markdown(f":black[Way of capture: {method[index]}]")
                     st.markdown(f":black[Encounter chance: {chance[index]}%]")
-            
+bug = st.button("Report Bug")
 
 hide_pages(['Red'])
 hide_pages(['Blue'])
