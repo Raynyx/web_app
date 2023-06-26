@@ -31,6 +31,8 @@ poke_list=open("./pokemon-list-en.txt",'r')
 poke_list=[i[:-1] for i in poke_list]
 pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 
+do = False
+
 if pokemon != '':
     try :
         if bus.maps(pokemon, 'crystal') == 'not found':
