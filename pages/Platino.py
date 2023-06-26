@@ -27,8 +27,8 @@ with  b:
            "https://www.nintenderos.com/wp-content/uploads/2019/09/H2x1_NDS_PokemonPlatinum_esES_image1600w-e1568403709829.jpg",
             width=550)
 
-poke_list=open("./pokemon-list-en.txt",'r')
-poke_list=[i[:-1] for i in poke_list]
+poke_list=open("./lists/gen4.txt",'r')
+poke_list=[i[:-1].lower() for i in poke_list]
 pokemon = st.selectbox("Introduce the Pokemon you want to search:",['']+poke_list)
 do = False
 
