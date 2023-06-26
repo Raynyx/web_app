@@ -134,8 +134,8 @@ if gen == 'GEN-4':
 if gen == 'GEN-5':
     clicked = clickable_images(
         [
-            "https://static.wikia.nocookie.net/espokemon/images/a/ae/Portblacksp.jpg",
-            "https://static.wikia.nocookie.net/espokemon/images/9/95/Pkmnwhitesp.jpg",
+            "https://i.ebayimg.com/images/g/EdoAAMXQDjhQ6vGN/s-l500.jpg",
+            "https://www.yambalu.com/img/juegos/portadas/4285_pokemon_white_version_nintendo_ds_xxxl.jpg",
         ],
         titles=[f"Image #{str(i)}" for i in range(5)],
         div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap","cursor":"pointer"},
