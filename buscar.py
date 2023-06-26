@@ -102,19 +102,19 @@ def maps(pokemon, juego):
             if teselia:
                 if "route" in i["label"]:
                     pt = np.array(i["points"], np.int32)
-                    image = cv2.fillPoly(image, [pt], (255,0,0))
+                    image = cv2.fillPoly(image, [pt], (220,50,0))
                 elif "bridge" in i["label"]:
                     pt = diag(i["points"])
                     pt = np.array(pt, np.int32)
-                    image = cv2.fillPoly(image, [pt], (255,0,0))
+                    image = cv2.fillPoly(image, [pt], (220,50,0))
                 else:
                     radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
                     center = (int(i["points"][0][0]),int(i["points"][0][1]))
-                    image = cv2.circle(image, center, int(radio), (0,0,255), thickness = 3)
+                    image = cv2.circle(image, center, int(radio), (220,50,0), thickness = 3)
             elif sinnoh or kanto or jhoto or hoenn:
                 pt = diag(i["points"])
                 pt = np.array(pt, np.int32)
-                image = cv2.fillPoly(image, [pt], (255,0,0))
+                image = cv2.fillPoly(image, [pt], (220,50,0))
 
     cv2.imwrite(r"poly.png",image)
     
@@ -175,19 +175,19 @@ def pinta_ruta(route, juego):
             if teselia:
                 if "route" in i["label"]:
                     pt = np.array(i["points"], np.int32)
-                    image = cv2.fillPoly(image, [pt], (255,0,0))
+                    image = cv2.fillPoly(image, [pt], (220,50,0))
                 elif "bridge" in i["label"]:
                     pt = diag(i["points"])
                     pt = np.array(pt, np.int32)
-                    image = cv2.fillPoly(image, [pt], (255,0,0))
+                    image = cv2.fillPoly(image, [pt], (220,50,0))
                 else:
                     radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
                     center = (int(i["points"][0][0]),int(i["points"][0][1]))
-                    image = cv2.circle(image, center, int(radio), (0,0,255), thickness = 3)
+                    image = cv2.circle(image, center, int(radio), (220,50,0), thickness = 3)
             elif sinnoh or kanto or jhoto or hoenn:
                 pt = diag(i["points"])
                 pt = np.array(pt, np.int32)
-                image = cv2.fillPoly(image, [pt], (255,0,0))
+                image = cv2.fillPoly(image, [pt], (220,50,0))
                 
     cv2.imwrite(r"poly_pop.png",image)
     
