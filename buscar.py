@@ -50,6 +50,7 @@ def diag(punto):
     return res
 
 def maps(pokemon, juego):
+    color = (160,255,0)
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto", 
               "gold":"jhoto", "silver":"jhoto","crystal":"jhoto",
@@ -102,19 +103,19 @@ def maps(pokemon, juego):
             if teselia:
                 if "route" in i["label"]:
                     pt = np.array(i["points"], np.int32)
-                    image = cv2.fillPoly(image, [pt], (220,50,0))
+                    image = cv2.fillPoly(image, [pt], color)
                 elif "bridge" in i["label"]:
                     pt = diag(i["points"])
                     pt = np.array(pt, np.int32)
-                    image = cv2.fillPoly(image, [pt], (220,50,0))
+                    image = cv2.fillPoly(image, [pt], color)
                 else:
                     radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
                     center = (int(i["points"][0][0]),int(i["points"][0][1]))
-                    image = cv2.circle(image, center, int(radio), (220,50,0), thickness = 3)
+                    image = cv2.circle(image, center, int(radio), color, thickness = 3)
             elif sinnoh or kanto or jhoto or hoenn:
                 pt = diag(i["points"])
                 pt = np.array(pt, np.int32)
-                image = cv2.fillPoly(image, [pt], (220,50,0))
+                image = cv2.fillPoly(image, [pt], color)
 
     cv2.imwrite(r"poly.png",image)
     
@@ -138,7 +139,7 @@ def maps(pokemon, juego):
 
 
 def pinta_ruta(route, juego):
-    
+    color = (160,255,0)
     juegos = {"black":"teselia","white":"teselia","pearl":"sinnoh",
              "diamond":"sinnoh","platinum":"sinnoh", "red":"kanto","blue":"kanto","yellow":"kanto",
              "gold":"jhoto", "silver":"jhoto","crystal":"jhoto",
@@ -175,19 +176,19 @@ def pinta_ruta(route, juego):
             if teselia:
                 if "route" in i["label"]:
                     pt = np.array(i["points"], np.int32)
-                    image = cv2.fillPoly(image, [pt], (220,50,0))
+                    image = cv2.fillPoly(image, [pt], color)
                 elif "bridge" in i["label"]:
                     pt = diag(i["points"])
                     pt = np.array(pt, np.int32)
-                    image = cv2.fillPoly(image, [pt], (220,50,0))
+                    image = cv2.fillPoly(image, [pt], color)
                 else:
                     radio = abs(i["points"][0][0] - i["points"][1][0]) + abs(i["points"][0][1] - i["points"][1][1])
                     center = (int(i["points"][0][0]),int(i["points"][0][1]))
-                    image = cv2.circle(image, center, int(radio), (220,50,0), thickness = 3)
+                    image = cv2.circle(image, center, int(radio), color, thickness = 3)
             elif sinnoh or kanto or jhoto or hoenn:
                 pt = diag(i["points"])
                 pt = np.array(pt, np.int32)
-                image = cv2.fillPoly(image, [pt], (220,50,0))
+                image = cv2.fillPoly(image, [pt], color)
                 
     cv2.imwrite(r"poly_pop.png",image)
     
